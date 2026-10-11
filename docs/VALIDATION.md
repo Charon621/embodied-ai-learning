@@ -33,7 +33,7 @@ python scripts/validate_repo.py --run-labs --seeds 7,19,42
 
 不联网、不下载数据、不安装第三方包。可用 `--report outputs/validation/report.json` 保存新运行的摘要。脚本检查内部文件目标，不验证标题锚点或每次重新请求外部网页；来源核验以 [sources.json](sources.json) 中的日期与说明为准。
 
-GitHub Actions 定义了 Ubuntu/Windows 的 Python 3.12 检查；只有远端任务成功才代表该环境通过。不得将配置了工作流等同于已经通过跨平台验证。
+GitHub Actions 的 Python 3.12 矩阵已实际运行：首次发布提交 `c0ea61ab` 的 [Windows 与 Ubuntu 检查](https://github.com/Charon621/embodied-ai-learning/actions/runs/38151128891) 均为 `completed/success`，每个平台执行了种子7、19、42的三个实验。远端CI记录补充本地实测；以后变更需检查相应提交的任务状态，不能沿用旧提交的通过结论。
 
 ## 尚未验证的边界
 
