@@ -1,0 +1,57 @@
+# 三个 CPU 实验：从机制到可复核证据
+
+在仓库根目录执行，Python 3.11/3.12 即可，只用标准库。不会联网、下载数据或权重，也不调用 API。实验输出默认放在被 Git 忽略的 `outputs/`。不同配置用不同输出目录，同目录重跑会更新同名生成文件。
+
+```bash
+python labs/01_behavior_cloning.py --seed 7 --output-dir outputs/bc
+python labs/02_flow_matching.py --seed 7 --output-dir outputs/flow
+python labs/03_world_model_planning.py --seed 7 --output-dir outputs/world
+```
+
+| 实验 | 要回答的问题 | 主要产物 | 对应课程 |
+|---|---|---|---|
+| 01 行为克隆与反馈数据 | 分布内动作误差小，为什么闭环仍会失败？ | `metrics.json`、`rollouts.csv`、`rollout.svg` | [M05](../docs/modules/05-imitation-and-vla.md) |
+| 02 一维 Flow Matching | 学习速度场误差与数值积分误差有什么不同？ | 指标、场系数、采样 CSV、SVG | [M04](../docs/modules/04-diffusion-and-flow.md)、[详细说明](README-flow.md) |
+| 03 世界模型与规划 | 一步预测、长程预测与实际控制是否一致？ | 原始转移、预测与控制 CSV、指标、SVG | [M06](../docs/modules/06-latent-world-models.md)、[详细说明](README-world-model.md) |
+
+SVG 可直接用浏览器打开。结论应来自全部试验的 CSV 和统计，示例轨迹图用于解释现象。
+
+## 01：行为克隆为什么遇到陌生状态会失败
+
+真实状态是一个标量，环境与专家为：
+
+```text
+x_next = x + 0.25*x² + action
+expert_action = -0.65*x - 0.25*x²
+```
+
+专家让下一状态成为 `0.35*x`。学习器使用特征 `[1,x,x²]` 做岭回归，在 `[-0.15,0.15]` 的 200 个带噪标签上训练。已知多项式特征保证模型有能力表达专家，但狭窄覆盖和正则化会使二次项学得不充分。从较远初态执行时，动作改变下一状态，后续输入因此偏离训练范围。
+
+反馈版本另外进行三轮：从训练用的新随机初态运行当前策略，在访问状态上向专家查询动作，加入训练集后重新拟合。评估使用独立采样的分布内/移位状态，以及固定的 8 个闭环初态。每条轨迹最多 20 步；状态绝对值超过 8 或出现非有限数就终止，并加入 1000 的统一失败代价。未失败时计入终点状态代价。JSON 记录每轮新增标签数量。
+
+这不是 DAgger 论文算法复现：没有策略混合、通用遗憾分析或机器人示教。反馈版本增加了标签预算。若要证明数据来自策略访问这一点的独立作用，还须添加**同样标签数量的宽范围离线专家数据**作为对照；当前实验只支持“这个受控 toy 中增加覆盖改善了闭环”的结论。
+
+提交一页 `bc-report.md`：
+
+1. 报告分布内与移位 holdout 动作 MSE、闭环平均代价、失败数和标签预算。
+2. 从 `rollouts.csv` 重算一个初态的代价，再核对 JSON；解释失败惩罚和终点项。
+3. 找一条失败轨迹，指出动作误差如何改变下一步输入。
+4. 使用至少三个 seed，保留全部结果；设计同标签预算的宽范围离线对照。
+
+验收是能从原始 CSV 复核指标并说明预算、覆盖和正则化限制。它不证明任何真实 VLA 或机器人性能。
+
+## 统一检查与复跑
+
+只检查课程结构、内部文件链接和 Python 语法：
+
+```bash
+python scripts/validate_repo.py
+```
+
+实际跑三组种子的三个实验，并从 CSV 独立重算部分指标：
+
+```bash
+python scripts/validate_repo.py --run-labs --seeds 7,19,42
+```
+
+检查失败返回非零退出码，生成物保留以便诊断。检查范围和发布时的实际结果见[验证报告](../docs/VALIDATION.md)。这些教学实验没有神经视觉编码器、视频生成或真实机器人；完整模型实践另按[环境路线](../docs/ENVIRONMENT.md)和[研究进阶](../docs/ADVANCED_RESEARCH.md)选择。

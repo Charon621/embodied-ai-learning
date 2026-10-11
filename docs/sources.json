@@ -1,0 +1,766 @@
+[
+  {
+    "id": "P-PYTHON",
+    "title": "The Python Tutorial",
+    "url": "https://docs.python.org/3/tutorial/",
+    "type": "docs",
+    "modules": [
+      "M01"
+    ],
+    "level": "入门",
+    "required": false,
+    "checked_on": "2026-10-11",
+    "verified_note": "官方教程说明面向已有一点编程基础的学习者。",
+    "why": "补函数、数据结构与文件处理",
+    "estimated_hours": 8
+  },
+  {
+    "id": "P-D2L",
+    "title": "动手学深度学习（中文）",
+    "url": "https://zh.d2l.ai/",
+    "type": "course",
+    "modules": [
+      "M01",
+      "M02"
+    ],
+    "level": "入门",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "目录核验包含线性代数、微积分、概率、自动微分与注意力。",
+    "why": "中文主教材的指定章节",
+    "estimated_hours": 12
+  },
+  {
+    "id": "P-PYTORCH",
+    "title": "PyTorch Learn the Basics",
+    "url": "https://docs.pytorch.org/tutorials/beginner/basics/intro.html",
+    "type": "docs",
+    "modules": [
+      "M01"
+    ],
+    "level": "入门",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "官方教程核验训练工作流与基础API。",
+    "why": "连接公式和训练代码",
+    "estimated_hours": 6
+  },
+  {
+    "id": "P-MML",
+    "title": "Mathematics for Machine Learning",
+    "url": "https://mml-book.com/",
+    "type": "course",
+    "modules": [
+      "M01"
+    ],
+    "level": "基础",
+    "required": false,
+    "checked_on": "2026-10-11",
+    "verified_note": "作者官网提供数学基础章节与公开PDF入口。",
+    "why": "按问题查漏，非整书前置",
+    "estimated_hours": 8
+  },
+  {
+    "id": "P-OPT",
+    "title": "CS231n Optimization",
+    "url": "https://cs231n.github.io/optimization-1/",
+    "type": "course",
+    "modules": [
+      "M01"
+    ],
+    "level": "基础",
+    "required": false,
+    "checked_on": "2026-10-11",
+    "verified_note": "官方课程笔记核验finite differences和gradient descent。",
+    "why": "独立核查梯度",
+    "estimated_hours": 2
+  },
+  {
+    "id": "P-CS231N",
+    "title": "Stanford CS231n 2025",
+    "url": "https://cs231n.stanford.edu/2025/schedule.html",
+    "type": "course",
+    "modules": [
+      "M02"
+    ],
+    "level": "基础",
+    "required": false,
+    "checked_on": "2026-10-11",
+    "verified_note": "固定2025课程页，包含视觉基础和Transformer材料。",
+    "why": "视觉表征查漏",
+    "estimated_hours": 8
+  },
+  {
+    "id": "P-ATTN",
+    "title": "Attention Is All You Need",
+    "url": "https://arxiv.org/abs/1706.03762",
+    "type": "paper",
+    "modules": [
+      "M02"
+    ],
+    "level": "基础",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "arXiv标题、作者与摘要主题核验。",
+    "why": "手算scaled dot-product attention",
+    "estimated_hours": 3
+  },
+  {
+    "id": "P-VIT",
+    "title": "An Image is Worth 16x16 Words",
+    "url": "https://arxiv.org/abs/2010.11929",
+    "type": "paper",
+    "modules": [
+      "M02"
+    ],
+    "level": "基础",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "arXiv确认视觉Transformer与图像patch主题。",
+    "why": "图像token化的核心论文",
+    "estimated_hours": 2
+  },
+  {
+    "id": "P-ROPE",
+    "title": "RoFormer: Enhanced Transformer with Rotary Position Embedding",
+    "url": "https://arxiv.org/abs/2104.09864",
+    "type": "paper",
+    "modules": [
+      "M02",
+      "M08"
+    ],
+    "level": "进阶",
+    "required": false,
+    "checked_on": "2026-10-11",
+    "verified_note": "arXiv确认rotary position embedding。",
+    "why": "位置编码推导入口",
+    "estimated_hours": 3
+  },
+  {
+    "id": "P-RLEVAL",
+    "title": "Deep Reinforcement Learning at the Edge of the Statistical Precipice",
+    "url": "https://proceedings.neurips.cc/paper/2021/hash/f514cec81cb148559cf475e7426eed5e-Abstract.html",
+    "type": "paper",
+    "modules": [
+      "M09"
+    ],
+    "level": "研究",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "NeurIPS正式论文页面核验题名和评测统计主题。",
+    "why": "小样本评测与不确定性报告",
+    "estimated_hours": 3
+  },
+  {
+    "id": "R-01",
+    "title": "Modern Robotics: Mechanics, Planning, and Control",
+    "url": "https://hades.mech.northwestern.edu/index.php/Modern_Robotics",
+    "type": "course",
+    "modules": [
+      "M03"
+    ],
+    "level": "foundation",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "核验作者所在 Northwestern 官方教材主页，含免费预印本入口、章目、练习与视频；本课程选读配置空间、刚体运动、运动学和控制章节。",
+    "why": "补齐机器人坐标、关节/任务空间、雅可比和反馈控制，使读者能检查模型动作接口。",
+    "estimated_hours": 6
+  },
+  {
+    "id": "R-02",
+    "title": "Stanford CS234: Reinforcement Learning — Lecture Materials",
+    "url": "https://web.stanford.edu/class/cs234/modules.html",
+    "type": "course",
+    "modules": [
+      "M03"
+    ],
+    "level": "foundation",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "核验 Stanford 官方 2026 课程资料页，列出 Introduction、Tabular MDP planning、Policy evaluation 及推荐章节；单独打开 Lecture 2 PDF 未成功，因此仅将已读取的官方课程导航标为核验入口。",
+    "why": "用状态、动作、转移与奖励建立连续决策语言，并区分状态和传感器观测。",
+    "estimated_hours": 2
+  },
+  {
+    "id": "R-03",
+    "title": "MuJoCo Documentation — Overview",
+    "url": "https://mujoco.readthedocs.io/en/stable/overview.html",
+    "type": "docs",
+    "modules": [
+      "M03"
+    ],
+    "level": "foundation",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "核验官方文档 Introduction、MJCF、mj_step 及 mjModel/mjData 分离介绍；未安装、运行仿真或验证当地系统兼容性。stable 文档可能随版本更新。",
+    "why": "理解仿真的结构、动态状态、推进步骤与接触建模职责，避免把可视化当作完整评测。",
+    "estimated_hours": 1
+  },
+  {
+    "id": "R-04",
+    "title": "LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning",
+    "url": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+    "type": "code",
+    "modules": [
+      "M03",
+      "M05",
+      "M09"
+    ],
+    "level": "intermediate",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "核验作者官方仓库 README 的套件说明、任务读取、固定初始状态、训练和独立评测入口；仅阅读代码说明，未下载数据或运行环境。",
+    "why": "把成功率主张落实到任务、初始状态、动作接口和具体评测协议。",
+    "estimated_hours": 3
+  },
+  {
+    "id": "R-05",
+    "title": "Open X-Embodiment: Robotic Learning Datasets and RT-X Models",
+    "url": "https://robotics-transformer-x.github.io/",
+    "type": "paper",
+    "modules": [
+      "M03",
+      "M05"
+    ],
+    "level": "intermediate",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "核验作者项目页数据汇集、标准格式、RT-X 模型与七维动作说明；未逐一核验全部子数据集许可、规模版本或下载可用性。",
+    "why": "学习跨本体数据的共享与动作语义对齐，区分统一格式和统一物理意义。",
+    "estimated_hours": 0.5
+  },
+  {
+    "id": "R-06",
+    "title": "DROID: A Large-Scale In-the-Wild Robot Manipulation Dataset",
+    "url": "https://droid-dataset.github.io/",
+    "type": "paper",
+    "modules": [
+      "M03",
+      "M05"
+    ],
+    "level": "foundation",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "核验作者项目页数据字段示例、统一硬件平台、多场景采集介绍，以及后续相机标定/语言标注更新说明；未下载数据。",
+    "why": "理解示教 episode、本体观测、相机和场景划分，建立数据卡而非只记规模。",
+    "estimated_hours": 0.5
+  },
+  {
+    "id": "R-07",
+    "title": "A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning (DAgger)",
+    "url": "https://proceedings.mlr.press/v15/ross11a.html",
+    "type": "paper",
+    "modules": [
+      "M05"
+    ],
+    "level": "intermediate",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "核验 PMLR 2011 作者、会议元数据及摘要，并浏览同站原论文 Algorithm 3.1 的当前策略访问、专家标注和数据汇集过程；教学实验不宣称论文复现。",
+    "why": "解释 BC 的闭环分布偏移与互动收集的作用及专家查询前提。",
+    "estimated_hours": 2
+  },
+  {
+    "id": "R-08",
+    "title": "Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware (ACT)",
+    "url": "https://arxiv.org/html/2304.13705v1",
+    "type": "paper",
+    "modules": [
+      "M05"
+    ],
+    "level": "intermediate",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "核验 2023 原论文 v1 方法、leader/follower 动作约定、CVAE 训练与先验均值推理、同一时刻预测的时间集成及分块消融；未复现实验。",
+    "why": "从单步 BC 递进到动作序列，认识预测长度、执行长度和重叠集成。",
+    "estimated_hours": 3
+  },
+  {
+    "id": "R-09",
+    "title": "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion",
+    "url": "https://arxiv.org/html/2303.04137v4",
+    "type": "paper",
+    "modules": [
+      "M05"
+    ],
+    "level": "intermediate",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "核验作者项目页与原论文 v4 的 II-C 动作扩散、观测条件和 To/Tp/Ta 滚动执行，以及示教覆盖和推理开销局限；未复现实验。",
+    "why": "把扩散学习迁移到动作分布，同时区别生成能力和闭环数据偏移。",
+    "estimated_hours": 3
+  },
+  {
+    "id": "R-10",
+    "title": "RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control",
+    "url": "https://robotics-transformer2.github.io/",
+    "type": "paper",
+    "modules": [
+      "M05"
+    ],
+    "level": "intermediate",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "核验作者项目页 Approach Overview：动作文本 token、机器人与视觉语言共同训练、推理反 token 化进入闭环；未独立复验作者报告的性能。",
+    "why": "建立 VLA 的第一条动作表示路线：复用语言 token 输出接口。",
+    "estimated_hours": 1.5
+  },
+  {
+    "id": "R-11",
+    "title": "OpenVLA: An Open-Source Vision-Language-Action Model",
+    "url": "https://openvla.github.io/",
+    "type": "paper",
+    "modules": [
+      "M05"
+    ],
+    "level": "intermediate",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "核验作者官方项目页原始 OpenVLA 的视觉编码器、投影器、语言主干、token 化动作和数据来源；正文仅讲原始机制，不混入后续 OFT 等版本，不下载权重。",
+    "why": "理解开放 VLA 的视觉—语言—动作链路，并学习检查动作归一化与本体适配。",
+    "estimated_hours": 1.5
+  },
+  {
+    "id": "R-12",
+    "title": "π0: A Vision-Language-Action Flow Model for General Robot Control",
+    "url": "https://arxiv.org/html/2410.24164v1",
+    "type": "paper",
+    "modules": [
+      "M05"
+    ],
+    "level": "advanced",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "核验原论文 v1 的 III–V：VLM、动作专家、本体状态、Flow Matching 连续动作以及预训练/后训练的数据角色；未运行模型或复现实验。",
+    "why": "连接 M04 的 Flow Matching 与连续动作输出，理解模型结构和训练数据配方各自的作用。",
+    "estimated_hours": 3
+  },
+  {
+    "id": "R-13",
+    "title": "π0.5: a Vision-Language-Action Model with Open-World Generalization",
+    "url": "https://arxiv.org/abs/2504.16054",
+    "type": "paper",
+    "modules": [
+      "M05",
+      "M09"
+    ],
+    "level": "advanced",
+    "required": false,
+    "checked_on": "2026-10-11",
+    "verified_note": "核验 arXiv 原论文入口、作者与摘要中的异构任务共同训练及新家庭实验主张；本课程只作为进阶选读，没有独立验证泛化结果。",
+    "why": "完成基础对照后，研究怎样把语义任务、跨本体示教与低层动作结合，并审查未见环境协议。",
+    "estimated_hours": 3
+  },
+  {
+    "id": "R-14",
+    "title": "Physical Intelligence openpi — Official Model and Training Code",
+    "url": "https://github.com/Physical-Intelligence/openpi",
+    "type": "code",
+    "modules": [
+      "M05",
+      "M09"
+    ],
+    "level": "advanced",
+    "required": false,
+    "checked_on": "2026-10-11",
+    "verified_note": "核验 Physical Intelligence 官方仓库 README 的模型类型、数据适配/训练入口、操作系统/GPU要求和 JAX/PyTorch 支持差异；main 会变化，实际实验须固定提交。未安装、下载权重或推理。",
+    "why": "从论文机制走向实现接口，核对配置、数据转换、归一化和评测版本。",
+    "estimated_hours": 3
+  },
+  {
+    "id": "V-01",
+    "title": "Denoising Diffusion Probabilistic Models",
+    "url": "https://hojonathanho.github.io/diffusion/",
+    "type": "paper",
+    "modules": [
+      "M04"
+    ],
+    "level": "基础到进阶",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "已浏览作者项目页，核对作者、2020 年论文、训练与采样算法入口及加噪/去噪主题；未复现实验。",
+    "why": "补足可lip Flow Matching 讲解之前的离散扩散与噪声回归基础。",
+    "estimated_hours": 3
+  },
+  {
+    "id": "V-02",
+    "title": "Score-Based Generative Modeling through Stochastic Differential Equations",
+    "url": "https://arxiv.org/abs/2011.13456v2",
+    "type": "paper",
+    "modules": [
+      "M04"
+    ],
+    "level": "进阶",
+    "required": false,
+    "checked_on": "2026-10-11",
+    "verified_note": "已浏览 arXiv 论文记录与摘要，核对 2021-02-10 v2、反向 SDE、score、probability-flow ODE 及同边缘分布主题；未复现实验。",
+    "why": "把离散扩散、score 估计、SDE/ODE 与求解器放回各自层级。",
+    "estimated_hours": 4
+  },
+  {
+    "id": "V-03",
+    "title": "Flow Matching for Generative Modeling",
+    "url": "https://arxiv.org/abs/2210.02747v2",
+    "type": "paper",
+    "modules": [
+      "M04"
+    ],
+    "level": "进阶",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "已浏览 arXiv 记录及 v2 HTML，核对条件概率路径、向量场回归、训练无需模拟但采样使用 ODE 的范围；未复现原文 ImageNet 实验。",
+    "why": "为标准库一维高斯实验提供原始方法来源，避免把所有 FM 路径等同于直线或全局最优运输。",
+    "estimated_hours": 4
+  },
+  {
+    "id": "V-04",
+    "title": "High-Resolution Image Synthesis with Latent Diffusion Models",
+    "url": "https://arxiv.org/abs/2112.10752v2",
+    "type": "paper",
+    "modules": [
+      "M04",
+      "M08"
+    ],
+    "level": "进阶",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "CVF 页面本次访问被 403 拒绝，改用作者 arXiv 论文记录核对 2022-04-13 v2、autoencoder latent 与 cross-attention 条件主题；未复现实验。",
+    "why": "区分生成表示、损失与骨干，建立视频 latent 压缩前置。",
+    "estimated_hours": 2
+  },
+  {
+    "id": "V-05",
+    "title": "Scalable Diffusion Models with Transformers (DiT)",
+    "url": "https://www.wpeebles.com/DiT",
+    "type": "paper",
+    "modules": [
+      "M04",
+      "M08"
+    ],
+    "level": "进阶",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "已浏览作者项目页，核对 ICCV 2023、latent patch Transformer、AdaLN、模型/patch 缩放及论文代码入口；未复现作者 FID。",
+    "why": "补足可lip AdaLN、位置编码专题与完整生成架构之间的关系。",
+    "estimated_hours": 2
+  },
+  {
+    "id": "V-06",
+    "title": "Classifier-Free Diffusion Guidance",
+    "url": "https://arxiv.org/abs/2207.12598",
+    "type": "paper",
+    "modules": [
+      "M04",
+      "M08"
+    ],
+    "level": "进阶",
+    "required": false,
+    "checked_on": "2026-10-11",
+    "verified_note": "已浏览 arXiv 作者与摘要，核对 2022 年论文将条件/无条件 score 组合及质量/多样性权衡；没有将引导分称为概率。",
+    "why": "建立视频条件采样和 guidance 消融的正确概念。",
+    "estimated_hours": 2
+  },
+  {
+    "id": "V-07",
+    "title": "Video Diffusion Models",
+    "url": "https://arxiv.org/abs/2204.03458v2",
+    "type": "paper",
+    "modules": [
+      "M08"
+    ],
+    "level": "进阶",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "已浏览 arXiv 记录与 v2 HTML，核对 2022-06-22 版本、图像/视频联合训练与条件时空延长主题；未复现实验。",
+    "why": "从图像生成过渡到时间结构和视频条件生成。",
+    "estimated_hours": 3
+  },
+  {
+    "id": "V-08",
+    "title": "Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets",
+    "url": "https://arxiv.org/abs/2311.15127v1",
+    "type": "paper",
+    "modules": [
+      "M08"
+    ],
+    "level": "进阶",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "已浏览 arXiv v1 记录与 HTML，核对 2023-11-25 版本、数据整理、图像预训练/视频预训练/高质量微调；论文任务范围不等于每个发布 checkpoint 的任务范围。",
+    "why": "补足只学网络结构时容易遗漏的训练阶段与数据质量。",
+    "estimated_hours": 3
+  },
+  {
+    "id": "V-09",
+    "title": "Towards Accurate Generative Models of Video: A New Metric & Challenges (FVD)",
+    "url": "https://arxiv.org/abs/1812.01717v2",
+    "type": "paper",
+    "modules": [
+      "M08",
+      "M09"
+    ],
+    "level": "进阶",
+    "required": false,
+    "checked_on": "2026-10-11",
+    "verified_note": "已浏览 arXiv 记录与摘要，核对 2019-03-27 v2 和 FVD 视频生成分布评价主题；本课程没有运行 FVD 或复现作者的人类研究。",
+    "why": "训练分布评估与协议可比性意识，避免把视频距离当物理正确率。",
+    "estimated_hours": 3
+  },
+  {
+    "id": "V-10",
+    "title": "VBench: Comprehensive Benchmark Suite for Video Generative Models",
+    "url": "https://vchitect.github.io/VBench-project/",
+    "type": "paper",
+    "modules": [
+      "M08",
+      "M09"
+    ],
+    "level": "进阶",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "已浏览作者项目页，核对 16 维视频评测、代码与论文入口，并检查展示图归一化说明；不记录排行榜排名为课程验收。",
+    "why": "把视觉质量、跨帧一致性和条件符合度拆成可解释的评测规约。",
+    "estimated_hours": 2
+  },
+  {
+    "id": "V-11",
+    "title": "Open-Sora official repository (hpcaitech)",
+    "url": "https://github.com/hpcaitech/Open-Sora",
+    "type": "code",
+    "modules": [
+      "M08"
+    ],
+    "level": "研究实践",
+    "required": false,
+    "checked_on": "2026-10-11",
+    "verified_note": "已浏览官方仓库 README，核对 configs、opensora、scripts、video autoencoder 与训练/推理文档入口，以及已公布版本；未下载权重、安装依赖或运行视频模型。它不等同于 OpenAI Sora。",
+    "why": "任选一套现代公开工程追踪端到端数据流；运行前固定 commit 并重验硬件、许可与任务范围。",
+    "estimated_hours": 6
+  },
+  {
+    "id": "V-12",
+    "title": "Wan2.1 official repository (Wan-Video)",
+    "url": "https://github.com/Wan-Video/Wan2.1",
+    "type": "code",
+    "modules": [
+      "M08"
+    ],
+    "level": "研究实践",
+    "required": false,
+    "checked_on": "2026-10-11",
+    "verified_note": "已浏览官方 README 的任务表、权重入口与推理参数，确认 T2V/I2V/首尾帧等任务使用不同配置或权重；未下载运行，也未启用提示扩写 API；不假设所有新型号均公开。",
+    "why": "任选一套现代工程研究条件控制与采样接口，区分发布权重与论文范围。",
+    "estimated_hours": 6
+  },
+  {
+    "id": "W-01",
+    "title": "World Models",
+    "url": "https://worldmodels.github.io/",
+    "type": "paper",
+    "modules": [
+      "M06"
+    ],
+    "level": "入门",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "作者交互式论文可访问；核验视觉压缩、时序模型、控制器与想象环境的主题和方法接口。",
+    "why": "用三个组件建立世界模型进入控制系统的第一张计算图。",
+    "estimated_hours": 2
+  },
+  {
+    "id": "W-02",
+    "title": "Learning Latent Dynamics for Planning from Pixels (PlaNet)",
+    "url": "https://danijar.com/project/planet/",
+    "type": "paper",
+    "modules": [
+      "M06"
+    ],
+    "level": "进阶",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "作者项目页和 arXiv:1811.04551 可访问；主题为像素输入、确定性与随机潜在动态、多步 overshooting 及在线规划。",
+    "why": "学习 RSSM 的 prior/posterior、模型预测与动作搜索的关系。",
+    "estimated_hours": 3
+  },
+  {
+    "id": "W-03",
+    "title": "Dream to Control: Learning Behaviors by Latent Imagination (Dreamer)",
+    "url": "https://danijar.com/project/dreamer/",
+    "type": "paper",
+    "modules": [
+      "M06"
+    ],
+    "level": "进阶",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "作者项目页和 arXiv:1912.01603 可访问；核验 latent imagination、策略/价值训练以及解析梯度路线。",
+    "why": "和 PlaNet 对照训练时想象、执行时规划两种模型用途。",
+    "estimated_hours": 3
+  },
+  {
+    "id": "W-04",
+    "title": "Mastering Diverse Control Tasks through World Models (DreamerV3)",
+    "url": "https://danijar.com/project/dreamerv3/",
+    "type": "paper",
+    "modules": [
+      "M06"
+    ],
+    "level": "研究",
+    "required": false,
+    "checked_on": "2026-10-11",
+    "verified_note": "作者项目页与 Nature 正式论文信息可访问；将归一化、平衡与变换用于稳定跨任务学习。课程未复现论文性能。",
+    "why": "在已理解 actor/critic 后再理解世界模型训练稳定性。",
+    "estimated_hours": 2.5
+  },
+  {
+    "id": "W-05",
+    "title": "Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture (I-JEPA)",
+    "url": "https://arxiv.org/abs/2301.08243",
+    "type": "paper",
+    "modules": [
+      "M06"
+    ],
+    "level": "进阶",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "作者论文 arXiv 页面和官方 facebookresearch/ijepa 说明可访问；从图像上下文预测目标块表征，非像素生成。静态图像模型不等同动作条件动态。",
+    "why": "建立 JEPA 表征预测目标，防止把静态表征模型误称通用机器人策略。",
+    "estimated_hours": 2
+  },
+  {
+    "id": "W-06",
+    "title": "V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning",
+    "url": "https://arxiv.org/abs/2506.09985",
+    "type": "paper",
+    "modules": [
+      "M06",
+      "M07"
+    ],
+    "level": "进阶",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "论文摘要与 v1 HTML §§2–4、官方 vjepa2 仓库可访问；明确动作无关预训练、含状态信号的交互后训练、V-JEPA 2-AC 与 MPC 的区别。",
+    "why": "连接表征学习、动作条件预测和图像目标规划。",
+    "estimated_hours": 3
+  },
+  {
+    "id": "W-07",
+    "title": "Learning Universal Policies via Text-Guided Video Generation (UniPi)",
+    "url": "https://arxiv.org/abs/2302.00111",
+    "type": "paper",
+    "modules": [
+      "M07"
+    ],
+    "level": "进阶",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "作者论文页面、NeurIPS 论文与 Google Research 官方说明可访问；文本条件视频计划由逆动力学转换为低层动作。",
+    "why": "学习视频计划与动作解码两个模块的边界。",
+    "estimated_hours": 2.5
+  },
+  {
+    "id": "W-08",
+    "title": "Genie: Generative Interactive Environments",
+    "url": "https://arxiv.org/abs/2402.15391",
+    "type": "paper",
+    "modules": [
+      "M07"
+    ],
+    "level": "进阶",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "论文及 Google DeepMind 官方 publication 页可访问；未标注真实动作的视频、时空 tokenizer、自回归动态与 latent action 接口主题一致。",
+    "why": "讨论 latent action 可控性与真实机器人动作对齐的差距。",
+    "estimated_hours": 2
+  },
+  {
+    "id": "W-09",
+    "title": "Genie 3 — official model overview and limitations",
+    "url": "https://deepmind.google/models/genie/",
+    "type": "docs",
+    "modules": [
+      "M07"
+    ],
+    "level": "研究",
+    "required": false,
+    "checked_on": "2026-10-11",
+    "verified_note": "DeepMind 官方现行模型页可访问，含交互能力与有限动作、多主体、地点准确性、持续时长限制；属会更新的官方说明，非独立复现。",
+    "why": "练习把世界生成的演示范围与物理仿真、控制证据分开。",
+    "estimated_hours": 0.5
+  },
+  {
+    "id": "W-10",
+    "title": "Cosmos-Predict2 — official models and action-conditioned sample",
+    "url": "https://github.com/nvidia-cosmos/cosmos-predict2",
+    "type": "code",
+    "modules": [
+      "M07"
+    ],
+    "level": "进阶",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "官方 GitHub README 可访问；Models 表区分 Text2Image、Video2World 和 Video+Action 动作条件样例，后者预测未来画面。未下载或运行模型。",
+    "why": "区分动作作为条件的前向预测器与直接输出动作的策略。",
+    "estimated_hours": 1
+  },
+  {
+    "id": "W-11",
+    "title": "Cosmos 3 — official unified model project",
+    "url": "https://research.nvidia.com/labs/cosmos-lab/cosmos3/",
+    "type": "docs",
+    "modules": [
+      "M07"
+    ],
+    "level": "研究",
+    "required": false,
+    "checked_on": "2026-10-11",
+    "verified_note": "NVIDIA 研究项目页可访问，列出 Unified MoT、autoregressive diffusion 及理解/生成/策略/前向与逆向动态接口。技术报告 PDF 的浏览工具打开失败，故以已核验官方页面为资料入口。",
+    "why": "观察多模态世界与动作接口的统一设计，同时练习审查公开能力边界。",
+    "estimated_hours": 0.5
+  },
+  {
+    "id": "W-12",
+    "title": "Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning",
+    "url": "https://arxiv.org/abs/2601.16163",
+    "type": "paper",
+    "modules": [
+      "M07"
+    ],
+    "level": "研究",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "v1 HTML §§4.1–4.3 与限制可访问；核验 latent frame injection、动作/状态/价值联合训练、直接策略和 best-of-N 规划，以及成功示教分布之外的 rollout 数据需求。",
+    "why": "理解视频模型怎样同时承担策略、前向模型和价值评估角色。",
+    "estimated_hours": 2.5
+  },
+  {
+    "id": "W-13",
+    "title": "World Action Models are Zero-shot Policies (DreamZero)",
+    "url": "https://arxiv.org/abs/2602.15922",
+    "type": "paper",
+    "modules": [
+      "M07"
+    ],
+    "level": "研究",
+    "required": true,
+    "checked_on": "2026-10-11",
+    "verified_note": "作者论文 v1 HTML 方法部分可访问；联合视频动作、动作块后真实观测更新和跨本体评测为论文定义的范围。课程未复现论文性能。",
+    "why": "从联合目标、闭环上下文和迁移协议理解 WAM，而非从名称判断。",
+    "estimated_hours": 2
+  },
+  {
+    "id": "W-14",
+    "title": "Causal World Modeling for Robot Control (LingBot-VA)",
+    "url": "https://arxiv.org/abs/2601.21998v1",
+    "type": "paper",
+    "modules": [
+      "M07"
+    ],
+    "level": "研究",
+    "required": false,
+    "checked_on": "2026-10-11",
+    "verified_note": "作者论文 v1 HTML 可访问；核验交错视频动作、双流 MoT、闭环观测与异步执行。仅讨论此版本，不把后续 VA2 说明混入。",
+    "why": "研究因果时序、生成计算和实际动作执行怎样协调。",
+    "estimated_hours": 2.5
+  }
+]

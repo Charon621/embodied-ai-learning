@@ -1,0 +1,148 @@
+{
+  "title": "具身智能、世界模型与视频生成",
+  "language": "zh-CN",
+  "version": "1.0.0",
+  "source_checked_on": "2026-10-11",
+  "weekly_hours": 8,
+  "total_estimated_hours": 192,
+  "planned_weeks": 24,
+  "prerequisite_scope": "full_curriculum",
+  "specialization_note": "prerequisites定义完整主线顺序；专项按START_HERE完成相应模块与实验后进入M09，专项验收不等同完整主线结业。",
+  "modules": [
+    {
+      "id": "M01",
+      "title": "数学、Python与深度学习",
+      "path": "docs/modules/01-math-and-deep-learning.md",
+      "prerequisites": [],
+      "estimated_hours": 32,
+      "weeks": [
+        1,
+        4
+      ],
+      "deliverable": "梯度核查、训练循环与泄漏诊断卡"
+    },
+    {
+      "id": "M02",
+      "title": "视觉表征与Transformer",
+      "path": "docs/modules/02-vision-and-transformers.md",
+      "prerequisites": [
+        "M01"
+      ],
+      "estimated_hours": 16,
+      "weeks": [
+        5,
+        6
+      ],
+      "deliverable": "注意力手算、token预算与模型接口卡"
+    },
+    {
+      "id": "M03",
+      "title": "机器人、控制、数据与仿真",
+      "path": "docs/modules/03-robotics-foundations.md",
+      "prerequisites": [
+        "M01"
+      ],
+      "estimated_hours": 16,
+      "weeks": [
+        7,
+        8
+      ],
+      "deliverable": "坐标/控制表、episode划分审计"
+    },
+    {
+      "id": "M04",
+      "title": "扩散与Flow Matching",
+      "path": "docs/modules/04-diffusion-and-flow.md",
+      "prerequisites": [
+        "M01",
+        "M02"
+      ],
+      "estimated_hours": 24,
+      "weeks": [
+        9,
+        11
+      ],
+      "deliverable": "生成训练目标对照、速度场CPU实验"
+    },
+    {
+      "id": "M05",
+      "title": "模仿学习与VLA",
+      "path": "docs/modules/05-imitation-and-vla.md",
+      "prerequisites": [
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "estimated_hours": 24,
+      "weeks": [
+        12,
+        14
+      ],
+      "deliverable": "BC闭环实验、动作表示与VLA比较卡"
+    },
+    {
+      "id": "M06",
+      "title": "latent世界模型与规划",
+      "path": "docs/modules/06-latent-world-models.md",
+      "prerequisites": [
+        "M01",
+        "M03",
+        "M05"
+      ],
+      "estimated_hours": 24,
+      "weeks": [
+        15,
+        17
+      ],
+      "deliverable": "动力学预测、开环/滚动规划对照"
+    },
+    {
+      "id": "M08",
+      "title": "视频生成",
+      "path": "docs/modules/08-video-generation.md",
+      "prerequisites": [
+        "M02",
+        "M04"
+      ],
+      "estimated_hours": 16,
+      "weeks": [
+        18,
+        19
+      ],
+      "deliverable": "视频token与条件接口、质量评测方案"
+    },
+    {
+      "id": "M07",
+      "title": "视频世界模型与WAM",
+      "path": "docs/modules/07-video-world-models-and-wam.md",
+      "prerequisites": [
+        "M04",
+        "M06",
+        "M08"
+      ],
+      "estimated_hours": 16,
+      "weeks": [
+        20,
+        21
+      ],
+      "deliverable": "动作条件/联合生成/规划路线比较"
+    },
+    {
+      "id": "M09",
+      "title": "评测、复现与研究",
+      "path": "docs/modules/09-evaluation-and-research.md",
+      "prerequisites": [
+        "M05",
+        "M06",
+        "M07",
+        "M08"
+      ],
+      "estimated_hours": 24,
+      "weeks": [
+        22,
+        24
+      ],
+      "deliverable": "可复跑项目、全种子结果与边界报告"
+    }
+  ]
+}
