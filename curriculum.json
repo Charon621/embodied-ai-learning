@@ -1,30 +1,31 @@
 {
   "title": "具身智能、世界模型与视频生成",
   "language": "zh-CN",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "source_checked_on": "2026-10-11",
   "weekly_hours": 8,
   "total_estimated_hours": 192,
   "planned_weeks": 24,
   "prerequisite_scope": "full_curriculum",
-  "specialization_note": "prerequisites定义完整主线顺序；专项按START_HERE完成相应模块与实验后进入M09，专项验收不等同完整主线结业。",
+  "specialization_note": "本文件的前置关系用于完整课程；读者从学习指南/从这里开始.md进入，专题路线见学习指南/专题学习.md。",
   "modules": [
     {
       "id": "M01",
-      "title": "数学、Python与深度学习",
-      "path": "docs/modules/01-math-and-deep-learning.md",
+      "title": "数学与深度学习",
+      "path": "课程/01-数学与深度学习.md",
       "prerequisites": [],
       "estimated_hours": 32,
       "weeks": [
         1,
         4
       ],
-      "deliverable": "梯度核查、训练循环与泄漏诊断卡"
+      "deliverable": "梯度核查、训练循环与泄漏诊断卡",
+      "reader_number": 1
     },
     {
       "id": "M02",
-      "title": "视觉表征与Transformer",
-      "path": "docs/modules/02-vision-and-transformers.md",
+      "title": "视觉与Transformer",
+      "path": "课程/02-视觉与Transformer.md",
       "prerequisites": [
         "M01"
       ],
@@ -33,12 +34,13 @@
         5,
         6
       ],
-      "deliverable": "注意力手算、token预算与模型接口卡"
+      "deliverable": "注意力手算、token预算与模型接口卡",
+      "reader_number": 2
     },
     {
       "id": "M03",
-      "title": "机器人、控制、数据与仿真",
-      "path": "docs/modules/03-robotics-foundations.md",
+      "title": "机器人与控制",
+      "path": "课程/03-机器人与控制.md",
       "prerequisites": [
         "M01"
       ],
@@ -47,12 +49,13 @@
         7,
         8
       ],
-      "deliverable": "坐标/控制表、episode划分审计"
+      "deliverable": "坐标/控制表、episode划分审计",
+      "reader_number": 3
     },
     {
       "id": "M04",
-      "title": "扩散与Flow Matching",
-      "path": "docs/modules/04-diffusion-and-flow.md",
+      "title": "扩散与FlowMatching",
+      "path": "课程/04-扩散与FlowMatching.md",
       "prerequisites": [
         "M01",
         "M02"
@@ -62,12 +65,13 @@
         9,
         11
       ],
-      "deliverable": "生成训练目标对照、速度场CPU实验"
+      "deliverable": "生成训练目标对照、速度场CPU实验",
+      "reader_number": 4
     },
     {
       "id": "M05",
       "title": "模仿学习与VLA",
-      "path": "docs/modules/05-imitation-and-vla.md",
+      "path": "课程/05-模仿学习与VLA.md",
       "prerequisites": [
         "M02",
         "M03",
@@ -78,12 +82,13 @@
         12,
         14
       ],
-      "deliverable": "BC闭环实验、动作表示与VLA比较卡"
+      "deliverable": "BC闭环实验、动作表示与VLA比较卡",
+      "reader_number": 5
     },
     {
       "id": "M06",
-      "title": "latent世界模型与规划",
-      "path": "docs/modules/06-latent-world-models.md",
+      "title": "世界模型与规划",
+      "path": "课程/06-世界模型与规划.md",
       "prerequisites": [
         "M01",
         "M03",
@@ -94,12 +99,13 @@
         15,
         17
       ],
-      "deliverable": "动力学预测、开环/滚动规划对照"
+      "deliverable": "动力学预测、开环/滚动规划对照",
+      "reader_number": 6
     },
     {
       "id": "M08",
       "title": "视频生成",
-      "path": "docs/modules/08-video-generation.md",
+      "path": "课程/07-视频生成.md",
       "prerequisites": [
         "M02",
         "M04"
@@ -109,12 +115,13 @@
         18,
         19
       ],
-      "deliverable": "视频token与条件接口、质量评测方案"
+      "deliverable": "视频token与条件接口、质量评测方案",
+      "reader_number": 7
     },
     {
       "id": "M07",
-      "title": "视频世界模型与WAM",
-      "path": "docs/modules/07-video-world-models-and-wam.md",
+      "title": "视频世界模型与动作",
+      "path": "课程/08-视频世界模型与动作.md",
       "prerequisites": [
         "M04",
         "M06",
@@ -125,12 +132,13 @@
         20,
         21
       ],
-      "deliverable": "动作条件/联合生成/规划路线比较"
+      "deliverable": "动作条件/联合生成/规划路线比较",
+      "reader_number": 8
     },
     {
       "id": "M09",
-      "title": "评测、复现与研究",
-      "path": "docs/modules/09-evaluation-and-research.md",
+      "title": "评测与研究",
+      "path": "课程/09-评测与研究.md",
       "prerequisites": [
         "M05",
         "M06",
@@ -142,7 +150,8 @@
         22,
         24
       ],
-      "deliverable": "可复跑项目、全种子结果与边界报告"
+      "deliverable": "可复跑项目、全种子结果与边界报告",
+      "reader_number": 9
     }
   ]
 }

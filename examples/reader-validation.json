@@ -1,0 +1,2642 @@
+{
+  "checked_at_utc": "2026-10-11T16:15:09.492741+00:00",
+  "python": "3.12.10",
+  "platform": "Windows",
+  "structure": {
+    "modules": 9,
+    "sources": 50,
+    "required_sources": 34,
+    "hours": 192,
+    "weeks": 24,
+    "local_file_links": 365,
+    "python_files_compiled": 7,
+    "homepage_chapter_links": 9,
+    "chapter_navigation": "checked"
+  },
+  "script_sha256": {
+    "labs/01_behavior_cloning.py": "d23ba7a9314afb9dd9db91b3eaf5b117e47b145a44d401f41030026b09b855ed",
+    "labs/02_flow_matching.py": "fa8613ae002e2ec02c5aed81d86b5203eecc93ab824625cb0c97f7949e94a087",
+    "labs/03_world_model_planning.py": "214c45cf40e64a4a325032d77d5d5b72119166621bcd35d7a9d2f8f07fb745d5",
+    "scripts/render_resources.py": "ebedbfb21612353eb6a32a67f94eae321717336261d28b22122c32a87c7b14af",
+    "scripts/validate_repo.py": "be0c1665e8f9fc6918f97950223d2d4cc42bc26112cc7b2e7fc74ceea5e5ebbc",
+    "练习/01-线性回归/train.py": "b8114ca77b53f2024e214521c824eadd0bfe5881c5903ee20bfb3f0ec2c4fee9",
+    "练习/02-注意力/attention.py": "b814362445eda5c21da2e214ba81ebce5327ffc0cde7c5ba73cfadd77b12b4be"
+  },
+  "runs": [
+    {
+      "seed": 7,
+      "bc": {
+        "iid_action_mse": {
+          "bc": 4.540886941450277e-05,
+          "feedback": 2.2800308842903812e-08
+        },
+        "shifted_action_mse": {
+          "bc": 1.1929181283958656,
+          "feedback": 5.24274214087743e-06
+        },
+        "closed_loop": {
+          "expert": {
+            "mean_state_cost": 4.0,
+            "failed_episodes": 0,
+            "episodes": 8,
+            "failure_threshold": 8.0,
+            "failure_penalty": 1000.0
+          },
+          "bc": {
+            "mean_state_cost": 139.94608874653625,
+            "failed_episodes": 1,
+            "episodes": 8,
+            "failure_threshold": 8.0,
+            "failure_penalty": 1000.0
+          },
+          "feedback": {
+            "mean_state_cost": 4.003865803340667,
+            "failed_episodes": 0,
+            "episodes": 8,
+            "failure_threshold": 8.0,
+            "failure_penalty": 1000.0
+          }
+        },
+        "feedback_added_labels": 480
+      },
+      "flow": {
+        "held_out_velocity_rmse_to_analytic": 0.013317448454223743,
+        "runs": [
+          {
+            "steps": 8,
+            "learned": {
+              "mean": 2.0037345258430337,
+              "std": 0.40606588236810076,
+              "mean_abs_error": 0.003734525843033687,
+              "std_abs_error": 0.09393411763189924,
+              "moment_matched_gaussian_w2": 0.09400832483645143
+            },
+            "oracle_euler": {
+              "mean": 2.0039828144440377,
+              "std": 0.4075316105771778,
+              "mean_abs_error": 0.003982814444037697,
+              "std_abs_error": 0.0924683894228222,
+              "moment_matched_gaussian_w2": 0.09255412391323432
+            },
+            "oracle_rmse_to_exact_endpoint": 0.08372936217528806,
+            "learned_rmse_to_oracle_euler": 0.0014866090314109128
+          },
+          {
+            "steps": 32,
+            "learned": {
+              "mean": 2.004643522671909,
+              "std": 0.46759640236546013,
+              "mean_abs_error": 0.0046435226719090394,
+              "std_abs_error": 0.03240359763453987,
+              "moment_matched_gaussian_w2": 0.032734621465135214
+            },
+            "oracle_euler": {
+              "mean": 2.0045837061708522,
+              "std": 0.4690163663076131,
+              "mean_abs_error": 0.004583706170852242,
+              "std_abs_error": 0.03098363369238688,
+              "moment_matched_gaussian_w2": 0.03132085437922664
+            },
+            "oracle_rmse_to_exact_endpoint": 0.022241670251630243,
+            "learned_rmse_to_oracle_euler": 0.0014212232797183582
+          },
+          {
+            "steps": 128,
+            "learned": {
+              "mean": 2.0049059268313294,
+              "std": 0.48413326561995523,
+              "mean_abs_error": 0.004905926831329399,
+              "std_abs_error": 0.015866734380044767,
+              "moment_matched_gaussian_w2": 0.016607870964131806
+            },
+            "oracle_euler": {
+              "mean": 2.004745804808114,
+              "std": 0.48560270735963285,
+              "mean_abs_error": 0.004745804808114151,
+              "std_abs_error": 0.014397292640367154,
+              "moment_matched_gaussian_w2": 0.015159310625786702
+            },
+            "oracle_rmse_to_exact_endpoint": 0.005654537121938547,
+            "learned_rmse_to_oracle_euler": 0.001478140077470792
+          }
+        ],
+        "checks_passed": true
+      },
+      "world": {
+        "prediction": {
+          "in_distribution": {
+            "fitted": {
+              "one_step": {
+                "position_rmse": 0.00023118060940441475,
+                "velocity_rmse": 0.00023118060940441524,
+                "state_rmse": 0.000231180609404415,
+                "transitions": 768,
+                "uses_actual_preceding_state": true
+              },
+              "free_rollout": [
+                {
+                  "horizon": 1,
+                  "position_rmse": 0.00011276171225667207,
+                  "velocity_rmse": 0.00011276171225667161,
+                  "state_rmse": 0.00011276171225667184,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 2,
+                  "position_rmse": 0.0003231972698968881,
+                  "velocity_rmse": 0.00021508136194908596,
+                  "state_rmse": 0.0002745145419888313,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 3,
+                  "position_rmse": 0.0006002607273549007,
+                  "velocity_rmse": 0.0002847647775292112,
+                  "state_rmse": 0.00046978927154943395,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 4,
+                  "position_rmse": 0.0008974702474387472,
+                  "velocity_rmse": 0.0003218154147968457,
+                  "state_rmse": 0.0006741728288201149,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 5,
+                  "position_rmse": 0.0012246022277335043,
+                  "velocity_rmse": 0.00037909061546321284,
+                  "state_rmse": 0.0009064657497396522,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 6,
+                  "position_rmse": 0.0015969474590877659,
+                  "velocity_rmse": 0.00042766546538964195,
+                  "state_rmse": 0.0011690036221872477,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 7,
+                  "position_rmse": 0.0019748178869988435,
+                  "velocity_rmse": 0.0004256765718968611,
+                  "state_rmse": 0.0014284793016828142,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 8,
+                  "position_rmse": 0.00232340317088349,
+                  "velocity_rmse": 0.0003950677146553443,
+                  "state_rmse": 0.0016664754414083714,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 9,
+                  "position_rmse": 0.002635531346274645,
+                  "velocity_rmse": 0.00037780928645869314,
+                  "state_rmse": 0.0018826530925970758,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 10,
+                  "position_rmse": 0.002926476159756148,
+                  "velocity_rmse": 0.00036955010597281105,
+                  "state_rmse": 0.002085764847057981,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 11,
+                  "position_rmse": 0.0031978337228672263,
+                  "velocity_rmse": 0.00037930645075991484,
+                  "state_rmse": 0.0022770610337334994,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 12,
+                  "position_rmse": 0.003458597863311925,
+                  "velocity_rmse": 0.00041460698376587896,
+                  "state_rmse": 0.0024631076033228075,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 13,
+                  "position_rmse": 0.003715924529771426,
+                  "velocity_rmse": 0.00040761106926055963,
+                  "state_rmse": 0.002643316278346268,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 14,
+                  "position_rmse": 0.0039391504619090785,
+                  "velocity_rmse": 0.0003737250834616663,
+                  "state_rmse": 0.0027979078612033435,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 15,
+                  "position_rmse": 0.004119184058315255,
+                  "velocity_rmse": 0.0003467430355248268,
+                  "state_rmse": 0.002923004279757687,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 16,
+                  "position_rmse": 0.004255813130902221,
+                  "velocity_rmse": 0.0003620978984737776,
+                  "state_rmse": 0.0030201871045714116,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 17,
+                  "position_rmse": 0.004374443843989798,
+                  "velocity_rmse": 0.0004021919155960794,
+                  "state_rmse": 0.0031062451031101104,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 18,
+                  "position_rmse": 0.004509372765508313,
+                  "velocity_rmse": 0.0005720787235766349,
+                  "state_rmse": 0.0032141652729967985,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 19,
+                  "position_rmse": 0.004759055264352356,
+                  "velocity_rmse": 0.0009035633753339535,
+                  "state_rmse": 0.0034252761773618167,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 20,
+                  "position_rmse": 0.005326972480942092,
+                  "velocity_rmse": 0.0013167618160217678,
+                  "state_rmse": 0.003880109372997576,
+                  "episodes": 32
+                }
+              ]
+            },
+            "biased": {
+              "one_step": {
+                "position_rmse": 0.04937741685865853,
+                "velocity_rmse": 0.04937741685865853,
+                "state_rmse": 0.04937741685865853,
+                "transitions": 768,
+                "uses_actual_preceding_state": true
+              },
+              "free_rollout": [
+                {
+                  "horizon": 1,
+                  "position_rmse": 0.05399237134764578,
+                  "velocity_rmse": 0.05399237134764578,
+                  "state_rmse": 0.05399237134764578,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 2,
+                  "position_rmse": 0.12799409512907498,
+                  "velocity_rmse": 0.07860154389416613,
+                  "state_rmse": 0.10620897111463141,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 3,
+                  "position_rmse": 0.22812130701365912,
+                  "velocity_rmse": 0.1054739329079797,
+                  "state_rmse": 0.1777133664594438,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 4,
+                  "position_rmse": 0.3332591067202378,
+                  "velocity_rmse": 0.11048754358551721,
+                  "state_rmse": 0.24826309582732228,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 5,
+                  "position_rmse": 0.45203250677132273,
+                  "velocity_rmse": 0.12758788602256957,
+                  "state_rmse": 0.33212351304723525,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 6,
+                  "position_rmse": 0.5912970436095101,
+                  "velocity_rmse": 0.1455518064587253,
+                  "state_rmse": 0.43059117625930576,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 7,
+                  "position_rmse": 0.7476951765266594,
+                  "velocity_rmse": 0.16558676233977546,
+                  "state_rmse": 0.5415104121175334,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 8,
+                  "position_rmse": 0.9185430986065668,
+                  "velocity_rmse": 0.17847354996539752,
+                  "state_rmse": 0.6616548314774873,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 9,
+                  "position_rmse": 1.087999150622082,
+                  "velocity_rmse": 0.17855708965104464,
+                  "state_rmse": 0.7796232378588466,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 10,
+                  "position_rmse": 1.2608377322127398,
+                  "velocity_rmse": 0.18126349917092927,
+                  "state_rmse": 0.9007131183409771,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 11,
+                  "position_rmse": 1.4373294977610052,
+                  "velocity_rmse": 0.18227568118629578,
+                  "state_rmse": 1.0244853608241142,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 12,
+                  "position_rmse": 1.6135466812133807,
+                  "velocity_rmse": 0.18391884135366987,
+                  "state_rmse": 1.1483377187612518,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 13,
+                  "position_rmse": 1.7827167256634573,
+                  "velocity_rmse": 0.17679474301434514,
+                  "state_rmse": 1.2667547720687193,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 14,
+                  "position_rmse": 1.9487510402178823,
+                  "velocity_rmse": 0.1733242329473924,
+                  "state_rmse": 1.383414599185125,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 15,
+                  "position_rmse": 2.1049993478914075,
+                  "velocity_rmse": 0.16245964828738269,
+                  "state_rmse": 1.4928856942085202,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 16,
+                  "position_rmse": 2.2499042778891267,
+                  "velocity_rmse": 0.1531337849702606,
+                  "state_rmse": 1.5946032760161868,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 17,
+                  "position_rmse": 2.373490777030454,
+                  "velocity_rmse": 0.13254310692930155,
+                  "state_rmse": 1.6809262541591616,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 18,
+                  "position_rmse": 2.4876104995178103,
+                  "velocity_rmse": 0.12163044112931093,
+                  "state_rmse": 1.7611076005628616,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 19,
+                  "position_rmse": 2.5911776899675565,
+                  "velocity_rmse": 0.11205732601772095,
+                  "state_rmse": 1.833951834877329,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 20,
+                  "position_rmse": 2.6814881286169188,
+                  "velocity_rmse": 0.09761613833578688,
+                  "state_rmse": 1.8973544073758408,
+                  "episodes": 32
+                }
+              ]
+            }
+          },
+          "out_of_distribution": {
+            "fitted": {
+              "one_step": {
+                "position_rmse": 0.06600704436004874,
+                "velocity_rmse": 0.06600704436004874,
+                "state_rmse": 0.06600704436004874,
+                "transitions": 768,
+                "uses_actual_preceding_state": true
+              },
+              "free_rollout": [
+                {
+                  "horizon": 1,
+                  "position_rmse": 0.06628636218457962,
+                  "velocity_rmse": 0.06628636218457963,
+                  "state_rmse": 0.06628636218457963,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 2,
+                  "position_rmse": 0.181344652417339,
+                  "velocity_rmse": 0.12134600586785428,
+                  "state_rmse": 0.15428988317522122,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 3,
+                  "position_rmse": 0.32372658792069764,
+                  "velocity_rmse": 0.14994127528348586,
+                  "state_rmse": 0.2522709751045642,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 4,
+                  "position_rmse": 0.4998820828547779,
+                  "velocity_rmse": 0.18426724926912572,
+                  "state_rmse": 0.3767203975844958,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 5,
+                  "position_rmse": 0.7081345297373648,
+                  "velocity_rmse": 0.21441946900207395,
+                  "state_rmse": 0.5231778956021986,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 6,
+                  "position_rmse": 0.9215264842889841,
+                  "velocity_rmse": 0.2181128843876182,
+                  "state_rmse": 0.6696208970685957,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 7,
+                  "position_rmse": 1.1598314616746135,
+                  "velocity_rmse": 0.24202110731046142,
+                  "state_rmse": 0.8377897217900361,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 8,
+                  "position_rmse": 1.4091163733816408,
+                  "velocity_rmse": 0.2527162961951867,
+                  "state_rmse": 1.0122930603572369,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 9,
+                  "position_rmse": 1.6724796556859642,
+                  "velocity_rmse": 0.26598925187287004,
+                  "state_rmse": 1.1974845470391948,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 10,
+                  "position_rmse": 1.9409776236916358,
+                  "velocity_rmse": 0.2721790441932285,
+                  "state_rmse": 1.3859068453127665,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 11,
+                  "position_rmse": 2.208218047870021,
+                  "velocity_rmse": 0.27038400125573037,
+                  "state_rmse": 1.5731075066685596,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 12,
+                  "position_rmse": 2.472137702206374,
+                  "velocity_rmse": 0.2676694533863729,
+                  "state_rmse": 1.7582820813149367,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 13,
+                  "position_rmse": 2.7346861459246075,
+                  "velocity_rmse": 0.2653980173278474,
+                  "state_rmse": 1.9428000957784535,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 14,
+                  "position_rmse": 2.9761002312709572,
+                  "velocity_rmse": 0.24555814570653642,
+                  "state_rmse": 2.11157185403361,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 15,
+                  "position_rmse": 3.180556470544744,
+                  "velocity_rmse": 0.20915247155134323,
+                  "state_rmse": 2.2538505073185395,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 16,
+                  "position_rmse": 3.376062240422816,
+                  "velocity_rmse": 0.20028131990128425,
+                  "state_rmse": 2.3914335510641025,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 17,
+                  "position_rmse": 3.563992403381013,
+                  "velocity_rmse": 0.19273710788718937,
+                  "state_rmse": 2.523805603063981,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 18,
+                  "position_rmse": 3.7398645959754213,
+                  "velocity_rmse": 0.1821884327337434,
+                  "state_rmse": 2.6476196688018065,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 19,
+                  "position_rmse": 3.902996245974088,
+                  "velocity_rmse": 0.16906753283004536,
+                  "state_rmse": 2.762423168772759,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 20,
+                  "position_rmse": 4.043738247342701,
+                  "velocity_rmse": 0.14855468222459553,
+                  "state_rmse": 2.8612835849171847,
+                  "episodes": 32
+                }
+              ]
+            },
+            "biased": {
+              "one_step": {
+                "position_rmse": 0.0760960567329139,
+                "velocity_rmse": 0.0760960567329139,
+                "state_rmse": 0.0760960567329139,
+                "transitions": 768,
+                "uses_actual_preceding_state": true
+              },
+              "free_rollout": [
+                {
+                  "horizon": 1,
+                  "position_rmse": 0.07768122908313478,
+                  "velocity_rmse": 0.07768122908313481,
+                  "state_rmse": 0.0776812290831348,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 2,
+                  "position_rmse": 0.15852651893227487,
+                  "velocity_rmse": 0.10057920351303912,
+                  "state_rmse": 0.13275321725687525,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 3,
+                  "position_rmse": 0.2183257017319638,
+                  "velocity_rmse": 0.09069192279287705,
+                  "state_rmse": 0.16716928081532145,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 4,
+                  "position_rmse": 0.27710290316634273,
+                  "velocity_rmse": 0.10505216657945918,
+                  "state_rmse": 0.20954948895935532,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 5,
+                  "position_rmse": 0.3460081109128654,
+                  "velocity_rmse": 0.11253198342346436,
+                  "state_rmse": 0.2572790898136774,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 6,
+                  "position_rmse": 0.39524471575198955,
+                  "velocity_rmse": 0.09213848469914843,
+                  "state_rmse": 0.28697376682592973,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 7,
+                  "position_rmse": 0.46911911459422984,
+                  "velocity_rmse": 0.1080985058718995,
+                  "state_rmse": 0.34041006936444407,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 8,
+                  "position_rmse": 0.5443591935283619,
+                  "velocity_rmse": 0.10891021652720749,
+                  "state_rmse": 0.39254831985556365,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 9,
+                  "position_rmse": 0.6350160841848854,
+                  "velocity_rmse": 0.11906006151096252,
+                  "state_rmse": 0.4568482928831516,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 10,
+                  "position_rmse": 0.7309636436727648,
+                  "velocity_rmse": 0.132689948566642,
+                  "state_rmse": 0.5253163193838465,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 11,
+                  "position_rmse": 0.8283078820053676,
+                  "velocity_rmse": 0.12752050540114301,
+                  "state_rmse": 0.5926024918484485,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 12,
+                  "position_rmse": 0.9259221060357837,
+                  "velocity_rmse": 0.13430324812435265,
+                  "state_rmse": 0.6615773231083774,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 13,
+                  "position_rmse": 1.026103810225694,
+                  "velocity_rmse": 0.12809723989832544,
+                  "state_rmse": 0.731196940717498,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 14,
+                  "position_rmse": 1.1017343385169187,
+                  "velocity_rmse": 0.10778667432617552,
+                  "state_rmse": 0.7827632208495777,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 15,
+                  "position_rmse": 1.128483161016405,
+                  "velocity_rmse": 0.08528102838855582,
+                  "state_rmse": 0.8002334342242228,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 16,
+                  "position_rmse": 1.1587285458027623,
+                  "velocity_rmse": 0.08601528787172623,
+                  "state_rmse": 0.8215991944390647,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 17,
+                  "position_rmse": 1.1983460096976268,
+                  "velocity_rmse": 0.08558177223592882,
+                  "state_rmse": 0.8495167445957928,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 18,
+                  "position_rmse": 1.2444817503812535,
+                  "velocity_rmse": 0.10163182296018146,
+                  "state_rmse": 0.8829110528445655,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 19,
+                  "position_rmse": 1.2985125383747678,
+                  "velocity_rmse": 0.09533777693738876,
+                  "state_rmse": 0.9206584882647436,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 20,
+                  "position_rmse": 1.3447014225456306,
+                  "velocity_rmse": 0.08548935436237086,
+                  "state_rmse": 0.9527671135974252,
+                  "episodes": 32
+                }
+              ]
+            }
+          }
+        },
+        "control": {
+          "baseline_id": {
+            "open_loop": {
+              "mean_cost": 6.176039461629631,
+              "cost_sample_std": 0.5007332333529133,
+              "mean_final_position_error": 0.08401954152686865,
+              "mean_plan_calls": 1.0,
+              "max_projected_gradient_residual": 0.0013861044455584781
+            },
+            "receding_horizon": {
+              "mean_cost": 6.113012275684253,
+              "cost_sample_std": 0.504849009874474,
+              "mean_final_position_error": 2.025266716612628e-05,
+              "mean_plan_calls": 24.0,
+              "max_projected_gradient_residual": 0.0013861044455584781
+            },
+            "paired_cost_difference_open_minus_receding": {
+              "mean": 0.06302718594537782,
+              "positive_count": 8,
+              "trials": 8,
+              "interpretation": "Positive means lower receding-horizon cost in this toy experiment; not a universal theorem."
+            }
+          },
+          "unseen_impulse": {
+            "open_loop": {
+              "mean_cost": 227.36233582196607,
+              "cost_sample_std": 0.377242727188244,
+              "mean_final_position_error": 4.883008933326979,
+              "mean_plan_calls": 1.0,
+              "max_projected_gradient_residual": 0.0014562634937460572
+            },
+            "receding_horizon": {
+              "mean_cost": 7.219203155585651,
+              "cost_sample_std": 0.5467816436642726,
+              "mean_final_position_error": 2.6279329052608658e-05,
+              "mean_plan_calls": 24.0,
+              "max_projected_gradient_residual": 0.0014562634937460572
+            },
+            "paired_cost_difference_open_minus_receding": {
+              "mean": 220.14313266638044,
+              "positive_count": 8,
+              "trials": 8,
+              "interpretation": "Positive means lower receding-horizon cost in this toy experiment; not a universal theorem."
+            }
+          },
+          "initial_state_ood": {
+            "open_loop": {
+              "mean_cost": 49.25259309686167,
+              "cost_sample_std": 1.649180038351819,
+              "mean_final_position_error": 0.4616130813296245,
+              "mean_plan_calls": 1.0,
+              "max_projected_gradient_residual": 0.0008318257407900972
+            },
+            "receding_horizon": {
+              "mean_cost": 44.613371188687886,
+              "cost_sample_std": 1.4613225633824567,
+              "mean_final_position_error": 7.251053810601593e-05,
+              "mean_plan_calls": 24.0,
+              "max_projected_gradient_residual": 0.0008318257407900972
+            },
+            "paired_cost_difference_open_minus_receding": {
+              "mean": 4.6392219081737895,
+              "positive_count": 8,
+              "trials": 8,
+              "interpretation": "Positive means lower receding-horizon cost in this toy experiment; not a universal theorem."
+            }
+          },
+          "deliberately_biased_model": {
+            "open_loop": {
+              "mean_cost": 274.4649738226305,
+              "cost_sample_std": 7.892349839952211,
+              "mean_final_position_error": 5.3863194033328226,
+              "mean_plan_calls": 1.0,
+              "max_projected_gradient_residual": 0.000543116732018456
+            },
+            "receding_horizon": {
+              "mean_cost": 6.554165929718087,
+              "cost_sample_std": 0.5951764561000867,
+              "mean_final_position_error": 0.033056473308964746,
+              "mean_plan_calls": 24.0,
+              "max_projected_gradient_residual": 0.0009232445975962955
+            },
+            "paired_cost_difference_open_minus_receding": {
+              "mean": 267.9108078929124,
+              "positive_count": 8,
+              "trials": 8,
+              "interpretation": "Positive means lower receding-horizon cost in this toy experiment; not a universal theorem."
+            }
+          }
+        }
+      }
+    },
+    {
+      "seed": 19,
+      "bc": {
+        "iid_action_mse": {
+          "bc": 6.421727138011712e-05,
+          "feedback": 9.852998599440846e-08
+        },
+        "shifted_action_mse": {
+          "bc": 0.7605694072670949,
+          "feedback": 6.262263712633454e-06
+        },
+        "closed_loop": {
+          "expert": {
+            "mean_state_cost": 4.0,
+            "failed_episodes": 0,
+            "episodes": 8,
+            "failure_threshold": 8.0,
+            "failure_penalty": 1000.0
+          },
+          "bc": {
+            "mean_state_cost": 139.03264587840823,
+            "failed_episodes": 1,
+            "episodes": 8,
+            "failure_threshold": 8.0,
+            "failure_penalty": 1000.0
+          },
+          "feedback": {
+            "mean_state_cost": 4.004471607164155,
+            "failed_episodes": 0,
+            "episodes": 8,
+            "failure_threshold": 8.0,
+            "failure_penalty": 1000.0
+          }
+        },
+        "feedback_added_labels": 459
+      },
+      "flow": {
+        "held_out_velocity_rmse_to_analytic": 0.012303239162937001,
+        "runs": [
+          {
+            "steps": 8,
+            "learned": {
+              "mean": 2.0035538000287767,
+              "std": 0.4168441662003474,
+              "mean_abs_error": 0.003553800028776699,
+              "std_abs_error": 0.08315583379965258,
+              "moment_matched_gaussian_w2": 0.08323173787420263
+            },
+            "oracle_euler": {
+              "mean": 2.0013459695117226,
+              "std": 0.42005685722287456,
+              "mean_abs_error": 0.0013459695117226111,
+              "std_abs_error": 0.07994314277712544,
+              "moment_matched_gaussian_w2": 0.07995447273924298
+            },
+            "oracle_rmse_to_exact_endpoint": 0.0862990571949095,
+            "learned_rmse_to_oracle_euler": 0.0038981917857208396
+          },
+          {
+            "steps": 32,
+            "learned": {
+              "mean": 2.0013072934559704,
+              "std": 0.48210911735586254,
+              "mean_abs_error": 0.0013072934559703597,
+              "std_abs_error": 0.017890882644137462,
+              "moment_matched_gaussian_w2": 0.01793858126960775
+            },
+            "oracle_euler": {
+              "mean": 2.0015490374566403,
+              "std": 0.4834313111030643,
+              "mean_abs_error": 0.0015490374566402565,
+              "std_abs_error": 0.01656868889693569,
+              "moment_matched_gaussian_w2": 0.01664094254558661
+            },
+            "oracle_rmse_to_exact_endpoint": 0.022924277974761147,
+            "learned_rmse_to_oracle_euler": 0.0013441117762297249
+          },
+          {
+            "steps": 128,
+            "learned": {
+              "mean": 2.0013266000212746,
+              "std": 0.49936160196548796,
+              "mean_abs_error": 0.0013266000212746043,
+              "std_abs_error": 0.0006383980345120444,
+              "moment_matched_gaussian_w2": 0.0014722159036345932
+            },
+            "oracle_euler": {
+              "mean": 2.0016038177700874,
+              "std": 0.5005274236850322,
+              "mean_abs_error": 0.0016038177700874456,
+              "std_abs_error": 0.0005274236850322245,
+              "moment_matched_gaussian_w2": 0.001688314894556474
+            },
+            "oracle_rmse_to_exact_endpoint": 0.00582807762795711,
+            "learned_rmse_to_oracle_euler": 0.0011983279859946615
+          }
+        ],
+        "checks_passed": true
+      },
+      "world": {
+        "prediction": {
+          "in_distribution": {
+            "fitted": {
+              "one_step": {
+                "position_rmse": 0.00019017739786513293,
+                "velocity_rmse": 0.00019017739786513386,
+                "state_rmse": 0.0001901773978651334,
+                "transitions": 768,
+                "uses_actual_preceding_state": true
+              },
+              "free_rollout": [
+                {
+                  "horizon": 1,
+                  "position_rmse": 0.0001078753555289057,
+                  "velocity_rmse": 0.0001078753555289104,
+                  "state_rmse": 0.00010787535552890805,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 2,
+                  "position_rmse": 0.0003096231372815158,
+                  "velocity_rmse": 0.00020621067495793207,
+                  "state_rmse": 0.00026304878787655945,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 3,
+                  "position_rmse": 0.0005761476622206895,
+                  "velocity_rmse": 0.00028152742442092067,
+                  "state_rmse": 0.00045343346776756724,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 4,
+                  "position_rmse": 0.0008978708812889765,
+                  "velocity_rmse": 0.0003636124020175408,
+                  "state_rmse": 0.0006849766778393295,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 5,
+                  "position_rmse": 0.0012449694406722106,
+                  "velocity_rmse": 0.00042696648326581954,
+                  "state_rmse": 0.0009306581773239997,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 6,
+                  "position_rmse": 0.0016439528124288052,
+                  "velocity_rmse": 0.0005333870731374416,
+                  "state_rmse": 0.0012221052776423774,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 7,
+                  "position_rmse": 0.0020994899518969037,
+                  "velocity_rmse": 0.0005756832116179464,
+                  "state_rmse": 0.0015393617538211764,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 8,
+                  "position_rmse": 0.002590600683866639,
+                  "velocity_rmse": 0.0006137076407951262,
+                  "state_rmse": 0.0018825314036717445,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 9,
+                  "position_rmse": 0.0030643992919765564,
+                  "velocity_rmse": 0.0005955541947887736,
+                  "state_rmse": 0.002207399807420138,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 10,
+                  "position_rmse": 0.003510837958151307,
+                  "velocity_rmse": 0.0005884004701802134,
+                  "state_rmse": 0.0025171609286758303,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 11,
+                  "position_rmse": 0.004000527539425841,
+                  "velocity_rmse": 0.000734733326809585,
+                  "state_rmse": 0.002876113145829737,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 12,
+                  "position_rmse": 0.004590582569456004,
+                  "velocity_rmse": 0.0008822836057007534,
+                  "state_rmse": 0.0033054404160324548,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 13,
+                  "position_rmse": 0.0052113997454341365,
+                  "velocity_rmse": 0.0008822638371062725,
+                  "state_rmse": 0.0037374507879687504,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 14,
+                  "position_rmse": 0.005801068066979224,
+                  "velocity_rmse": 0.0007997828339930226,
+                  "state_rmse": 0.004140775488919677,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 15,
+                  "position_rmse": 0.006335656159326202,
+                  "velocity_rmse": 0.0007380349862589084,
+                  "state_rmse": 0.004510279071751006,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 16,
+                  "position_rmse": 0.006779111445889756,
+                  "velocity_rmse": 0.0006493999534014828,
+                  "state_rmse": 0.00481549957404584,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 17,
+                  "position_rmse": 0.00707952718384397,
+                  "velocity_rmse": 0.0005199021959661376,
+                  "state_rmse": 0.005019462293919347,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 18,
+                  "position_rmse": 0.007248127725942038,
+                  "velocity_rmse": 0.00041991333364242364,
+                  "state_rmse": 0.0051337940521285225,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 19,
+                  "position_rmse": 0.00732046663769297,
+                  "velocity_rmse": 0.0003660457607218693,
+                  "state_rmse": 0.005182818793500225,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 20,
+                  "position_rmse": 0.007309704970225605,
+                  "velocity_rmse": 0.00041500608963312725,
+                  "state_rmse": 0.005177065617035074,
+                  "episodes": 32
+                }
+              ]
+            },
+            "biased": {
+              "one_step": {
+                "position_rmse": 0.048941669424363295,
+                "velocity_rmse": 0.048941669424363295,
+                "state_rmse": 0.048941669424363295,
+                "transitions": 768,
+                "uses_actual_preceding_state": true
+              },
+              "free_rollout": [
+                {
+                  "horizon": 1,
+                  "position_rmse": 0.04590680290695208,
+                  "velocity_rmse": 0.045906802906952086,
+                  "state_rmse": 0.04590680290695208,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 2,
+                  "position_rmse": 0.11152281146868323,
+                  "velocity_rmse": 0.07116764283587522,
+                  "state_rmse": 0.09354723636937161,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 3,
+                  "position_rmse": 0.19381414241539352,
+                  "velocity_rmse": 0.08876010430098331,
+                  "state_rmse": 0.15073532750443056,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 4,
+                  "position_rmse": 0.30100357004603095,
+                  "velocity_rmse": 0.11404868354009694,
+                  "state_rmse": 0.22760739377015526,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 5,
+                  "position_rmse": 0.43359559090921107,
+                  "velocity_rmse": 0.1417343944213669,
+                  "state_rmse": 0.3225629977367983,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 6,
+                  "position_rmse": 0.5771183122491247,
+                  "velocity_rmse": 0.1543089080538281,
+                  "state_rmse": 0.4224196878922921,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 7,
+                  "position_rmse": 0.7397531097267921,
+                  "velocity_rmse": 0.17124890912660382,
+                  "state_rmse": 0.5369175226361639,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 8,
+                  "position_rmse": 0.9205595702306578,
+                  "velocity_rmse": 0.191927861368138,
+                  "state_rmse": 0.6649309085584008,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 9,
+                  "position_rmse": 1.1130099241209725,
+                  "velocity_rmse": 0.20057798105153335,
+                  "state_rmse": 0.7996945096955719,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 10,
+                  "position_rmse": 1.2985341510564177,
+                  "velocity_rmse": 0.19318075832200743,
+                  "state_rmse": 0.9283075317064052,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 11,
+                  "position_rmse": 1.4655113141500735,
+                  "velocity_rmse": 0.17734605697199837,
+                  "state_rmse": 1.0438330891060579,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 12,
+                  "position_rmse": 1.6233060589035433,
+                  "velocity_rmse": 0.1712017533481826,
+                  "state_rmse": 1.1542167476740333,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 13,
+                  "position_rmse": 1.778686638755526,
+                  "velocity_rmse": 0.167751174786246,
+                  "state_rmse": 1.2633025400769202,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 14,
+                  "position_rmse": 1.9338189026948018,
+                  "velocity_rmse": 0.16563177328705556,
+                  "state_rmse": 1.3724229364051632,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 15,
+                  "position_rmse": 2.085365448210387,
+                  "velocity_rmse": 0.16376766298039164,
+                  "state_rmse": 1.4791161043048255,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 16,
+                  "position_rmse": 2.227145801494514,
+                  "velocity_rmse": 0.15203631732379017,
+                  "state_rmse": 1.5784950843920962,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 17,
+                  "position_rmse": 2.3549931738394134,
+                  "velocity_rmse": 0.13791356529547277,
+                  "state_rmse": 1.6680846801530704,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 18,
+                  "position_rmse": 2.47323833115056,
+                  "velocity_rmse": 0.12906032496419167,
+                  "state_rmse": 1.7512230597716942,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 19,
+                  "position_rmse": 2.5820607482320472,
+                  "velocity_rmse": 0.12273438050537172,
+                  "state_rmse": 1.8278541292617796,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 20,
+                  "position_rmse": 2.682282559336876,
+                  "velocity_rmse": 0.11272941724330468,
+                  "state_rmse": 1.8983344870747618,
+                  "episodes": 32
+                }
+              ]
+            }
+          },
+          "out_of_distribution": {
+            "fitted": {
+              "one_step": {
+                "position_rmse": 0.06530750356351817,
+                "velocity_rmse": 0.06530750356351817,
+                "state_rmse": 0.06530750356351817,
+                "transitions": 768,
+                "uses_actual_preceding_state": true
+              },
+              "free_rollout": [
+                {
+                  "horizon": 1,
+                  "position_rmse": 0.07904304692015218,
+                  "velocity_rmse": 0.07904304692015218,
+                  "state_rmse": 0.07904304692015218,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 2,
+                  "position_rmse": 0.18272364037894553,
+                  "velocity_rmse": 0.10765541829875923,
+                  "state_rmse": 0.14996269176434357,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 3,
+                  "position_rmse": 0.3283890883198203,
+                  "velocity_rmse": 0.15030168518633694,
+                  "state_rmse": 0.2553722673836917,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 4,
+                  "position_rmse": 0.49547048491614754,
+                  "velocity_rmse": 0.1719162444345,
+                  "state_rmse": 0.3708410687366659,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 5,
+                  "position_rmse": 0.6970528403520214,
+                  "velocity_rmse": 0.20927575115683086,
+                  "state_rmse": 0.5146255931573344,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 6,
+                  "position_rmse": 0.9195973035431771,
+                  "velocity_rmse": 0.22909720143897416,
+                  "state_rmse": 0.6701286176515118,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 7,
+                  "position_rmse": 1.159641683354475,
+                  "velocity_rmse": 0.24411668445053647,
+                  "state_rmse": 0.8379623468272077,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 8,
+                  "position_rmse": 1.4091948009403499,
+                  "velocity_rmse": 0.255252182256164,
+                  "state_rmse": 1.012665705833827,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 9,
+                  "position_rmse": 1.670445396781826,
+                  "velocity_rmse": 0.2675997667068057,
+                  "state_rmse": 1.196243591157572,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 10,
+                  "position_rmse": 1.9249028920678886,
+                  "velocity_rmse": 0.2603649192541872,
+                  "state_rmse": 1.3735066499783612,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 11,
+                  "position_rmse": 2.182759589023457,
+                  "velocity_rmse": 0.26296976218922397,
+                  "state_rmse": 1.5546048564345392,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 12,
+                  "position_rmse": 2.4205285647671,
+                  "velocity_rmse": 0.24313220710724381,
+                  "state_rmse": 1.7201848451527408,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 13,
+                  "position_rmse": 2.6603905593176727,
+                  "velocity_rmse": 0.24556669697601383,
+                  "state_rmse": 1.8891771926913459,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 14,
+                  "position_rmse": 2.894683616359277,
+                  "velocity_rmse": 0.24096230917634642,
+                  "state_rmse": 2.0539299006127765,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 15,
+                  "position_rmse": 3.1169218820954487,
+                  "velocity_rmse": 0.2279985251030911,
+                  "state_rmse": 2.209885217215435,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 16,
+                  "position_rmse": 3.3319272211187694,
+                  "velocity_rmse": 0.22055695096319905,
+                  "state_rmse": 2.3611844882865918,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 17,
+                  "position_rmse": 3.5192973381198214,
+                  "velocity_rmse": 0.19296299724149701,
+                  "state_rmse": 2.492256855984319,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 18,
+                  "position_rmse": 3.6937808134118244,
+                  "velocity_rmse": 0.17968222716869275,
+                  "state_rmse": 2.6149858890909545,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 19,
+                  "position_rmse": 3.859396165997467,
+                  "velocity_rmse": 0.1711834290203542,
+                  "state_rmse": 2.731688354524278,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 20,
+                  "position_rmse": 4.007336846589973,
+                  "velocity_rmse": 0.15493430074674905,
+                  "state_rmse": 2.83573211354542,
+                  "episodes": 32
+                }
+              ]
+            },
+            "biased": {
+              "one_step": {
+                "position_rmse": 0.0776484015862957,
+                "velocity_rmse": 0.07764840158629568,
+                "state_rmse": 0.07764840158629568,
+                "transitions": 768,
+                "uses_actual_preceding_state": true
+              },
+              "free_rollout": [
+                {
+                  "horizon": 1,
+                  "position_rmse": 0.0859891804797038,
+                  "velocity_rmse": 0.08598918047970379,
+                  "state_rmse": 0.0859891804797038,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 2,
+                  "position_rmse": 0.15787818588546876,
+                  "velocity_rmse": 0.08661056457262008,
+                  "state_rmse": 0.12733206876917263,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 3,
+                  "position_rmse": 0.2402707604068836,
+                  "velocity_rmse": 0.10071346360234526,
+                  "state_rmse": 0.18421894590036472,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 4,
+                  "position_rmse": 0.310266065330455,
+                  "velocity_rmse": 0.09442260764926963,
+                  "state_rmse": 0.22932581639550537,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 5,
+                  "position_rmse": 0.3847198092237415,
+                  "velocity_rmse": 0.12070878713331462,
+                  "state_rmse": 0.2851139622154165,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 6,
+                  "position_rmse": 0.44600360297359026,
+                  "velocity_rmse": 0.1103512258769382,
+                  "state_rmse": 0.32488198389412654,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 7,
+                  "position_rmse": 0.5162657835326232,
+                  "velocity_rmse": 0.11135430251328952,
+                  "state_rmse": 0.3734502242165444,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 8,
+                  "position_rmse": 0.5751255659964059,
+                  "velocity_rmse": 0.11863474747424191,
+                  "state_rmse": 0.4152370527608075,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 9,
+                  "position_rmse": 0.6463157819078865,
+                  "velocity_rmse": 0.1345166184756574,
+                  "state_rmse": 0.46680767484550223,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 10,
+                  "position_rmse": 0.7084089525493279,
+                  "velocity_rmse": 0.12586387197977483,
+                  "state_rmse": 0.5087656426694795,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 11,
+                  "position_rmse": 0.7820307554576902,
+                  "velocity_rmse": 0.12429832508013022,
+                  "state_rmse": 0.5599206087024532,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 12,
+                  "position_rmse": 0.820920615867743,
+                  "velocity_rmse": 0.10182331068613841,
+                  "state_rmse": 0.5849267664228405,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 13,
+                  "position_rmse": 0.8778136962718951,
+                  "velocity_rmse": 0.11403587635578029,
+                  "state_rmse": 0.625923743941208,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 14,
+                  "position_rmse": 0.9465879324802244,
+                  "velocity_rmse": 0.12598510174576516,
+                  "state_rmse": 0.6752410531725233,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 15,
+                  "position_rmse": 1.0179481497048368,
+                  "velocity_rmse": 0.11785622414331152,
+                  "state_rmse": 0.7246062810439954,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 16,
+                  "position_rmse": 1.101722044796329,
+                  "velocity_rmse": 0.12821676063057091,
+                  "state_rmse": 0.7842929942619663,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 17,
+                  "position_rmse": 1.1617214551540824,
+                  "velocity_rmse": 0.10956690604918853,
+                  "state_rmse": 0.8251065525938182,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 18,
+                  "position_rmse": 1.2227345703905323,
+                  "velocity_rmse": 0.0999829241508497,
+                  "state_rmse": 0.8674896007301397,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 19,
+                  "position_rmse": 1.29078508466329,
+                  "velocity_rmse": 0.10831619051163996,
+                  "state_rmse": 0.9159308194171027,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 20,
+                  "position_rmse": 1.3543914811444648,
+                  "velocity_rmse": 0.10255998166435143,
+                  "state_rmse": 0.9604412616177237,
+                  "episodes": 32
+                }
+              ]
+            }
+          }
+        },
+        "control": {
+          "baseline_id": {
+            "open_loop": {
+              "mean_cost": 6.310925091385955,
+              "cost_sample_std": 0.5586368561116336,
+              "mean_final_position_error": 0.08298057318810806,
+              "mean_plan_calls": 1.0,
+              "max_projected_gradient_residual": 0.001282210668352629
+            },
+            "receding_horizon": {
+              "mean_cost": 6.249659867057644,
+              "cost_sample_std": 0.5621733749489423,
+              "mean_final_position_error": 2.74553458001342e-05,
+              "mean_plan_calls": 24.0,
+              "max_projected_gradient_residual": 0.001282210668352629
+            },
+            "paired_cost_difference_open_minus_receding": {
+              "mean": 0.06126522432831116,
+              "positive_count": 8,
+              "trials": 8,
+              "interpretation": "Positive means lower receding-horizon cost in this toy experiment; not a universal theorem."
+            }
+          },
+          "unseen_impulse": {
+            "open_loop": {
+              "mean_cost": 227.19208418093268,
+              "cost_sample_std": 0.30782832410478383,
+              "mean_final_position_error": 4.879042040224312,
+              "mean_plan_calls": 1.0,
+              "max_projected_gradient_residual": 0.0014096911055317407
+            },
+            "receding_horizon": {
+              "mean_cost": 7.421928681449528,
+              "cost_sample_std": 0.5519386855074396,
+              "mean_final_position_error": 3.348816022172296e-05,
+              "mean_plan_calls": 24.0,
+              "max_projected_gradient_residual": 0.0014096911055317407
+            },
+            "paired_cost_difference_open_minus_receding": {
+              "mean": 219.77015549948317,
+              "positive_count": 8,
+              "trials": 8,
+              "interpretation": "Positive means lower receding-horizon cost in this toy experiment; not a universal theorem."
+            }
+          },
+          "initial_state_ood": {
+            "open_loop": {
+              "mean_cost": 50.06671580360984,
+              "cost_sample_std": 2.463225376849844,
+              "mean_final_position_error": 0.4732990985971516,
+              "mean_plan_calls": 1.0,
+              "max_projected_gradient_residual": 0.0010601822980468856
+            },
+            "receding_horizon": {
+              "mean_cost": 45.21430680110175,
+              "cost_sample_std": 1.9441859310102958,
+              "mean_final_position_error": 2.5207976627708573e-05,
+              "mean_plan_calls": 24.0,
+              "max_projected_gradient_residual": 0.0010601822980468856
+            },
+            "paired_cost_difference_open_minus_receding": {
+              "mean": 4.852409002508088,
+              "positive_count": 8,
+              "trials": 8,
+              "interpretation": "Positive means lower receding-horizon cost in this toy experiment; not a universal theorem."
+            }
+          },
+          "deliberately_biased_model": {
+            "open_loop": {
+              "mean_cost": 280.36223293583447,
+              "cost_sample_std": 7.621189625938957,
+              "mean_final_position_error": 5.442272880219566,
+              "mean_plan_calls": 1.0,
+              "max_projected_gradient_residual": 0.0005425667043177373
+            },
+            "receding_horizon": {
+              "mean_cost": 6.248447006642378,
+              "cost_sample_std": 0.5546593144954386,
+              "mean_final_position_error": 0.033064235505211606,
+              "mean_plan_calls": 24.0,
+              "max_projected_gradient_residual": 0.0011375462758528299
+            },
+            "paired_cost_difference_open_minus_receding": {
+              "mean": 274.1137859291921,
+              "positive_count": 8,
+              "trials": 8,
+              "interpretation": "Positive means lower receding-horizon cost in this toy experiment; not a universal theorem."
+            }
+          }
+        }
+      }
+    },
+    {
+      "seed": 42,
+      "bc": {
+        "iid_action_mse": {
+          "bc": 5.447026029074936e-05,
+          "feedback": 4.096978529212346e-08
+        },
+        "shifted_action_mse": {
+          "bc": 0.8078261817695375,
+          "feedback": 1.5057343326572623e-05
+        },
+        "closed_loop": {
+          "expert": {
+            "mean_state_cost": 4.0,
+            "failed_episodes": 0,
+            "episodes": 8,
+            "failure_threshold": 8.0,
+            "failure_penalty": 1000.0
+          },
+          "bc": {
+            "mean_state_cost": 136.55407173370526,
+            "failed_episodes": 1,
+            "episodes": 8,
+            "failure_threshold": 8.0,
+            "failure_penalty": 1000.0
+          },
+          "feedback": {
+            "mean_state_cost": 4.007227681782627,
+            "failed_episodes": 0,
+            "episodes": 8,
+            "failure_threshold": 8.0,
+            "failure_penalty": 1000.0
+          }
+        },
+        "feedback_added_labels": 464
+      },
+      "flow": {
+        "held_out_velocity_rmse_to_analytic": 0.013950046031137213,
+        "runs": [
+          {
+            "steps": 8,
+            "learned": {
+              "mean": 1.9988463418872588,
+              "std": 0.41965184747669976,
+              "mean_abs_error": 0.0011536581127411516,
+              "std_abs_error": 0.08034815252330024,
+              "moment_matched_gaussian_w2": 0.080356434346906
+            },
+            "oracle_euler": {
+              "mean": 2.0003961155408376,
+              "std": 0.41568885499030606,
+              "mean_abs_error": 0.0003961155408376271,
+              "std_abs_error": 0.08431114500969394,
+              "moment_matched_gaussian_w2": 0.08431207553113215
+            },
+            "oracle_rmse_to_exact_endpoint": 0.08540126838193832,
+            "learned_rmse_to_oracle_euler": 0.004255244743200959
+          },
+          {
+            "steps": 32,
+            "learned": {
+              "mean": 1.997074803217353,
+              "std": 0.4799301270300199,
+              "mean_abs_error": 0.0029251967826469105,
+              "std_abs_error": 0.020069872969980085,
+              "moment_matched_gaussian_w2": 0.020281927355366033
+            },
+            "oracle_euler": {
+              "mean": 2.0004558779411945,
+              "std": 0.4784043034256933,
+              "mean_abs_error": 0.00045587794119450464,
+              "std_abs_error": 0.02159569657430671,
+              "moment_matched_gaussian_w2": 0.02160050775391149
+            },
+            "oracle_rmse_to_exact_endpoint": 0.022685791472357105,
+            "learned_rmse_to_oracle_euler": 0.003709420973645151
+          },
+          {
+            "steps": 128,
+            "learned": {
+              "mean": 1.9969371396672633,
+              "std": 0.4967589810271715,
+              "mean_abs_error": 0.0030628603327367276,
+              "std_abs_error": 0.0032410189728285244,
+              "moment_matched_gaussian_w2": 0.00445929561703265
+            },
+            "oracle_euler": {
+              "mean": 2.0004719996536844,
+              "std": 0.495322640412186,
+              "mean_abs_error": 0.0004719996536843851,
+              "std_abs_error": 0.004677359587814012,
+              "moment_matched_gaussian_w2": 0.004701114377123135
+            },
+            "oracle_rmse_to_exact_endpoint": 0.005767446804567084,
+            "learned_rmse_to_oracle_euler": 0.003815535281694959
+          }
+        ],
+        "checks_passed": true
+      },
+      "world": {
+        "prediction": {
+          "in_distribution": {
+            "fitted": {
+              "one_step": {
+                "position_rmse": 0.00015148695285047972,
+                "velocity_rmse": 0.0001514869528504814,
+                "state_rmse": 0.00015148695285048056,
+                "transitions": 768,
+                "uses_actual_preceding_state": true
+              },
+              "free_rollout": [
+                {
+                  "horizon": 1,
+                  "position_rmse": 0.00010390284444923223,
+                  "velocity_rmse": 0.00010390284444922967,
+                  "state_rmse": 0.00010390284444923096,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 2,
+                  "position_rmse": 0.00028006355379204867,
+                  "velocity_rmse": 0.00018227672151846587,
+                  "state_rmse": 0.0002362841481883117,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 3,
+                  "position_rmse": 0.0004934257528418235,
+                  "velocity_rmse": 0.00023194364361185738,
+                  "state_rmse": 0.00038553004252552393,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 4,
+                  "position_rmse": 0.0007474614918323883,
+                  "velocity_rmse": 0.00030108876104174175,
+                  "state_rmse": 0.0005698039679565028,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 5,
+                  "position_rmse": 0.0010805778566250802,
+                  "velocity_rmse": 0.0004081903972382647,
+                  "state_rmse": 0.0008167826836515282,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 6,
+                  "position_rmse": 0.0014724099434702564,
+                  "velocity_rmse": 0.0004760419079135389,
+                  "state_rmse": 0.0010942136308143959,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 7,
+                  "position_rmse": 0.0019023639582128387,
+                  "velocity_rmse": 0.0005368132570484674,
+                  "state_rmse": 0.0013977047439373959,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 8,
+                  "position_rmse": 0.002374292775062072,
+                  "velocity_rmse": 0.0006066040384816958,
+                  "state_rmse": 0.0017328061982250435,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 9,
+                  "position_rmse": 0.0029076816802344934,
+                  "velocity_rmse": 0.0006598319630273368,
+                  "state_rmse": 0.0021083157938273614,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 10,
+                  "position_rmse": 0.0034489095031683993,
+                  "velocity_rmse": 0.000636584108170216,
+                  "state_rmse": 0.0024799411371865428,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 11,
+                  "position_rmse": 0.0039537986678321955,
+                  "velocity_rmse": 0.00060571291575894,
+                  "state_rmse": 0.0028283751556387317,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 12,
+                  "position_rmse": 0.0043680487076602995,
+                  "velocity_rmse": 0.0005292292698879123,
+                  "state_rmse": 0.0031112644642169933,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 13,
+                  "position_rmse": 0.004685068753577689,
+                  "velocity_rmse": 0.00045338887214784,
+                  "state_rmse": 0.003328320199074714,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 14,
+                  "position_rmse": 0.004918525872486822,
+                  "velocity_rmse": 0.00040915155893114026,
+                  "state_rmse": 0.0034899356553164443,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 15,
+                  "position_rmse": 0.005103139819970137,
+                  "velocity_rmse": 0.0003908895708796052,
+                  "state_rmse": 0.0036190351392869405,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 16,
+                  "position_rmse": 0.0052497981873605775,
+                  "velocity_rmse": 0.00040879860886629905,
+                  "state_rmse": 0.003723405518515639,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 17,
+                  "position_rmse": 0.0053641386086946356,
+                  "velocity_rmse": 0.0004365654764102383,
+                  "state_rmse": 0.0038055599081135037,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 18,
+                  "position_rmse": 0.005441048258470524,
+                  "velocity_rmse": 0.00045291751372775267,
+                  "state_rmse": 0.0038607085117401993,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 19,
+                  "position_rmse": 0.005466262496963496,
+                  "velocity_rmse": 0.0005202427276395137,
+                  "state_rmse": 0.003882697398804818,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 20,
+                  "position_rmse": 0.005467572736057538,
+                  "velocity_rmse": 0.0005741923993914352,
+                  "state_rmse": 0.0038874187152658645,
+                  "episodes": 32
+                }
+              ]
+            },
+            "biased": {
+              "one_step": {
+                "position_rmse": 0.04851954279008896,
+                "velocity_rmse": 0.04851954279008896,
+                "state_rmse": 0.04851954279008896,
+                "transitions": 768,
+                "uses_actual_preceding_state": true
+              },
+              "free_rollout": [
+                {
+                  "horizon": 1,
+                  "position_rmse": 0.05553397947180805,
+                  "velocity_rmse": 0.055533979471808055,
+                  "state_rmse": 0.055533979471808055,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 2,
+                  "position_rmse": 0.13155944036611955,
+                  "velocity_rmse": 0.0800202212752756,
+                  "state_rmse": 0.10888324518122758,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 3,
+                  "position_rmse": 0.22272685881254364,
+                  "velocity_rmse": 0.0980569800991357,
+                  "state_rmse": 0.17207908789661958,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 4,
+                  "position_rmse": 0.3421537857242878,
+                  "velocity_rmse": 0.1250470987493491,
+                  "state_rmse": 0.25759075098990963,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 5,
+                  "position_rmse": 0.47543330050670385,
+                  "velocity_rmse": 0.1391085518024321,
+                  "state_rmse": 0.350277042079029,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 6,
+                  "position_rmse": 0.6142929567607515,
+                  "velocity_rmse": 0.1452531577652508,
+                  "state_rmse": 0.4463486958458842,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 7,
+                  "position_rmse": 0.7612728065642274,
+                  "velocity_rmse": 0.1567904380037055,
+                  "state_rmse": 0.5495996394938635,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 8,
+                  "position_rmse": 0.9220646739334671,
+                  "velocity_rmse": 0.17048548101648375,
+                  "state_rmse": 0.6630492297535127,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 9,
+                  "position_rmse": 1.0873688149621556,
+                  "velocity_rmse": 0.17634929776900604,
+                  "state_rmse": 0.7789319657633214,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 10,
+                  "position_rmse": 1.2518629195061932,
+                  "velocity_rmse": 0.1738326937006752,
+                  "state_rmse": 0.8936941799726018,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 11,
+                  "position_rmse": 1.4205046563839456,
+                  "velocity_rmse": 0.17839904235311194,
+                  "state_rmse": 1.0123388012718317,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 12,
+                  "position_rmse": 1.5953556155489665,
+                  "velocity_rmse": 0.1814552265765299,
+                  "state_rmse": 1.1353601937965683,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 13,
+                  "position_rmse": 1.7633061716482785,
+                  "velocity_rmse": 0.1764864115939968,
+                  "state_rmse": 1.2530754383616005,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 14,
+                  "position_rmse": 1.9284055682729813,
+                  "velocity_rmse": 0.17256621573410746,
+                  "state_rmse": 1.3690374601447235,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 15,
+                  "position_rmse": 2.085574583092151,
+                  "velocity_rmse": 0.16380570483659188,
+                  "state_rmse": 1.4792656371620703,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 16,
+                  "position_rmse": 2.2331277561530154,
+                  "velocity_rmse": 0.154213150106551,
+                  "state_rmse": 1.5828204684939458,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 17,
+                  "position_rmse": 2.3777038062107216,
+                  "velocity_rmse": 0.14925381263839893,
+                  "state_rmse": 1.6845996691582321,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 18,
+                  "position_rmse": 2.5136857160056443,
+                  "velocity_rmse": 0.13964610457762167,
+                  "state_rmse": 1.780184950135029,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 19,
+                  "position_rmse": 2.6152756651107705,
+                  "velocity_rmse": 0.1114616795801255,
+                  "state_rmse": 1.8509579290917724,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 20,
+                  "position_rmse": 2.703979074767964,
+                  "velocity_rmse": 0.10052654517999844,
+                  "state_rmse": 1.9133228194777852,
+                  "episodes": 32
+                }
+              ]
+            }
+          },
+          "out_of_distribution": {
+            "fitted": {
+              "one_step": {
+                "position_rmse": 0.06368768423627044,
+                "velocity_rmse": 0.06368768423627044,
+                "state_rmse": 0.06368768423627044,
+                "transitions": 768,
+                "uses_actual_preceding_state": true
+              },
+              "free_rollout": [
+                {
+                  "horizon": 1,
+                  "position_rmse": 0.059421732881228796,
+                  "velocity_rmse": 0.059421732881228755,
+                  "state_rmse": 0.059421732881228775,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 2,
+                  "position_rmse": 0.15916464225606705,
+                  "velocity_rmse": 0.10520604291044008,
+                  "state_rmse": 0.13491051628649112,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 3,
+                  "position_rmse": 0.29691087417571954,
+                  "velocity_rmse": 0.14347390706499177,
+                  "state_rmse": 0.23317464400346347,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 4,
+                  "position_rmse": 0.4525164966185648,
+                  "velocity_rmse": 0.160139495217236,
+                  "state_rmse": 0.33942292029293686,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 5,
+                  "position_rmse": 0.6317706684053309,
+                  "velocity_rmse": 0.1850469263435312,
+                  "state_rmse": 0.46549787454214375,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 6,
+                  "position_rmse": 0.8395851239616821,
+                  "velocity_rmse": 0.21115567266326576,
+                  "state_rmse": 0.6121641521992403,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 7,
+                  "position_rmse": 1.0571087934694454,
+                  "velocity_rmse": 0.22295723888539673,
+                  "state_rmse": 0.7639335480268642,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 8,
+                  "position_rmse": 1.295233361452609,
+                  "velocity_rmse": 0.2430680721441011,
+                  "state_rmse": 0.9318560909055847,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 9,
+                  "position_rmse": 1.5332928204636995,
+                  "velocity_rmse": 0.24138618920405053,
+                  "state_rmse": 1.0975550477365543,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 10,
+                  "position_rmse": 1.7822444194578981,
+                  "velocity_rmse": 0.25401044497779485,
+                  "state_rmse": 1.2729722064614446,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 11,
+                  "position_rmse": 2.0366708943304466,
+                  "velocity_rmse": 0.25731494332815547,
+                  "state_rmse": 1.4515921107309644,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 12,
+                  "position_rmse": 2.2880688303968144,
+                  "velocity_rmse": 0.2551444267815563,
+                  "state_rmse": 1.6279369845223026,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 13,
+                  "position_rmse": 2.526753699136516,
+                  "velocity_rmse": 0.24351619422813192,
+                  "state_rmse": 1.7949630069936566,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 14,
+                  "position_rmse": 2.757116785023223,
+                  "velocity_rmse": 0.23388365080088186,
+                  "state_rmse": 1.9565779473827185,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 15,
+                  "position_rmse": 2.9750170289963096,
+                  "velocity_rmse": 0.22335796999871071,
+                  "state_rmse": 2.1095752067157942,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 16,
+                  "position_rmse": 3.169770232670257,
+                  "velocity_rmse": 0.19910313026575582,
+                  "state_rmse": 2.2457833137241976,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 17,
+                  "position_rmse": 3.348366398657261,
+                  "velocity_rmse": 0.18502686747476407,
+                  "state_rmse": 2.3712646922417284,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 18,
+                  "position_rmse": 3.5153826925228873,
+                  "velocity_rmse": 0.17343263095533426,
+                  "state_rmse": 2.4887742316619996,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 19,
+                  "position_rmse": 3.6704374300433416,
+                  "velocity_rmse": 0.1635457739602332,
+                  "state_rmse": 2.5979663342741204,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 20,
+                  "position_rmse": 3.819985399121629,
+                  "velocity_rmse": 0.15746805760938065,
+                  "state_rmse": 2.7034315821442294,
+                  "episodes": 32
+                }
+              ]
+            },
+            "biased": {
+              "one_step": {
+                "position_rmse": 0.07633222744398248,
+                "velocity_rmse": 0.07633222744398248,
+                "state_rmse": 0.07633222744398248,
+                "transitions": 768,
+                "uses_actual_preceding_state": true
+              },
+              "free_rollout": [
+                {
+                  "horizon": 1,
+                  "position_rmse": 0.06421521134766749,
+                  "velocity_rmse": 0.06421521134766749,
+                  "state_rmse": 0.06421521134766749,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 2,
+                  "position_rmse": 0.1298778492248386,
+                  "velocity_rmse": 0.08526243443688909,
+                  "state_rmse": 0.10985886046508657,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 3,
+                  "position_rmse": 0.2145830966193765,
+                  "velocity_rmse": 0.10963176316577282,
+                  "state_rmse": 0.17038930255388213,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 4,
+                  "position_rmse": 0.27897717546078044,
+                  "velocity_rmse": 0.08798652793117293,
+                  "state_rmse": 0.2068452241719133,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 5,
+                  "position_rmse": 0.3227458865140362,
+                  "velocity_rmse": 0.08352325952489385,
+                  "state_rmse": 0.2357340049116736,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 6,
+                  "position_rmse": 0.3844762440083792,
+                  "velocity_rmse": 0.09231627131321836,
+                  "state_rmse": 0.2795928076292079,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 7,
+                  "position_rmse": 0.4300896941184598,
+                  "velocity_rmse": 0.1033108596130983,
+                  "state_rmse": 0.31277010622892626,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 8,
+                  "position_rmse": 0.48809882083941886,
+                  "velocity_rmse": 0.11606083960033445,
+                  "state_rmse": 0.35476088946892503,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 9,
+                  "position_rmse": 0.5419373012566066,
+                  "velocity_rmse": 0.10142249177867649,
+                  "state_rmse": 0.3898605906807519,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 10,
+                  "position_rmse": 0.5993045403265236,
+                  "velocity_rmse": 0.12370442076584498,
+                  "state_rmse": 0.43270585608066303,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 11,
+                  "position_rmse": 0.6685875344040136,
+                  "velocity_rmse": 0.11854487110644928,
+                  "state_rmse": 0.4801365314293856,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 12,
+                  "position_rmse": 0.7437354353220249,
+                  "velocity_rmse": 0.12476291722856254,
+                  "state_rmse": 0.5332486208463286,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 13,
+                  "position_rmse": 0.8123274557825935,
+                  "velocity_rmse": 0.12008453668851922,
+                  "state_rmse": 0.5806445519291117,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 14,
+                  "position_rmse": 0.8838112157134307,
+                  "velocity_rmse": 0.10439541666211487,
+                  "state_rmse": 0.6292935197667735,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 15,
+                  "position_rmse": 0.9460257651702701,
+                  "velocity_rmse": 0.11599793670919427,
+                  "state_rmse": 0.673951136836635,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 16,
+                  "position_rmse": 0.9890665333516394,
+                  "velocity_rmse": 0.0911378778319539,
+                  "state_rmse": 0.7023384939514357,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 17,
+                  "position_rmse": 1.0238204141532234,
+                  "velocity_rmse": 0.10030198265293677,
+                  "state_rmse": 0.7274162247850222,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 18,
+                  "position_rmse": 1.0644189915245248,
+                  "velocity_rmse": 0.0983611108986709,
+                  "state_rmse": 0.7558646365769823,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 19,
+                  "position_rmse": 1.1065952338665581,
+                  "velocity_rmse": 0.10221812411313586,
+                  "state_rmse": 0.7858121774678065,
+                  "episodes": 32
+                },
+                {
+                  "horizon": 20,
+                  "position_rmse": 1.165276140317284,
+                  "velocity_rmse": 0.10201062956205968,
+                  "state_rmse": 0.827125943172016,
+                  "episodes": 32
+                }
+              ]
+            }
+          }
+        },
+        "control": {
+          "baseline_id": {
+            "open_loop": {
+              "mean_cost": 6.267643948117901,
+              "cost_sample_std": 0.3863153455762529,
+              "mean_final_position_error": 0.08416639975219073,
+              "mean_plan_calls": 1.0,
+              "max_projected_gradient_residual": 0.001293619600407081
+            },
+            "receding_horizon": {
+              "mean_cost": 6.204732073172824,
+              "cost_sample_std": 0.3896441106707968,
+              "mean_final_position_error": 1.3315831854751603e-05,
+              "mean_plan_calls": 24.0,
+              "max_projected_gradient_residual": 0.001293619600407081
+            },
+            "paired_cost_difference_open_minus_receding": {
+              "mean": 0.0629118749450771,
+              "positive_count": 8,
+              "trials": 8,
+              "interpretation": "Positive means lower receding-horizon cost in this toy experiment; not a universal theorem."
+            }
+          },
+          "unseen_impulse": {
+            "open_loop": {
+              "mean_cost": 227.13881252956662,
+              "cost_sample_std": 0.38396881769471675,
+              "mean_final_position_error": 4.880959957175557,
+              "mean_plan_calls": 1.0,
+              "max_projected_gradient_residual": 0.0017872431989334192
+            },
+            "receding_horizon": {
+              "mean_cost": 7.211448024476477,
+              "cost_sample_std": 0.5809213367221666,
+              "mean_final_position_error": 1.935030599163612e-05,
+              "mean_plan_calls": 24.0,
+              "max_projected_gradient_residual": 0.0017872431989334192
+            },
+            "paired_cost_difference_open_minus_receding": {
+              "mean": 219.92736450509014,
+              "positive_count": 8,
+              "trials": 8,
+              "interpretation": "Positive means lower receding-horizon cost in this toy experiment; not a universal theorem."
+            }
+          },
+          "initial_state_ood": {
+            "open_loop": {
+              "mean_cost": 49.695524127281146,
+              "cost_sample_std": 2.45580268408045,
+              "mean_final_position_error": 0.47240216910523924,
+              "mean_plan_calls": 1.0,
+              "max_projected_gradient_residual": 0.0010560477212216424
+            },
+            "receding_horizon": {
+              "mean_cost": 44.872184311970074,
+              "cost_sample_std": 2.0787646916812315,
+              "mean_final_position_error": 2.776374221304112e-05,
+              "mean_plan_calls": 24.0,
+              "max_projected_gradient_residual": 0.0010560477212216424
+            },
+            "paired_cost_difference_open_minus_receding": {
+              "mean": 4.823339815311076,
+              "positive_count": 8,
+              "trials": 8,
+              "interpretation": "Positive means lower receding-horizon cost in this toy experiment; not a universal theorem."
+            }
+          },
+          "deliberately_biased_model": {
+            "open_loop": {
+              "mean_cost": 280.35248901412024,
+              "cost_sample_std": 6.820417098452509,
+              "mean_final_position_error": 5.441849175363844,
+              "mean_plan_calls": 1.0,
+              "max_projected_gradient_residual": 0.0005389719422744799
+            },
+            "receding_horizon": {
+              "mean_cost": 6.129671978236406,
+              "cost_sample_std": 0.49708436578261106,
+              "mean_final_position_error": 0.033053053172752894,
+              "mean_plan_calls": 24.0,
+              "max_projected_gradient_residual": 0.0010344104574273594
+            },
+            "paired_cost_difference_open_minus_receding": {
+              "mean": 274.2228170358838,
+              "positive_count": 8,
+              "trials": 8,
+              "interpretation": "Positive means lower receding-horizon cost in this toy experiment; not a universal theorem."
+            }
+          }
+        }
+      }
+    }
+  ],
+  "intro_exercises": {
+    "linear": [
+      {
+        "seed": 7,
+        "steps": 500,
+        "learning_rate": 0.05,
+        "ground_truth": {
+          "w": 2,
+          "b": -1,
+          "noise_std": 0.1
+        },
+        "learned": {
+          "w": 2.0127634857840944,
+          "b": -1.001588375550246
+        },
+        "split_sizes": {
+          "train": 60,
+          "validation": 20,
+          "test": 20
+        },
+        "initial_train_mse": 6.0710143273853685,
+        "final_mse": {
+          "train": 0.009816679699238549,
+          "validation": 0.006629407976304837,
+          "test": 0.01064035340088252
+        },
+        "gradient_check": {
+          "analytical": [
+            -4.068216354257311,
+            1.998862610180414
+          ],
+          "finite_difference": [
+            -4.068216354280452,
+            1.998862610141927
+          ],
+          "relative_errors": [
+            2.844072012367908e-12,
+            9.627222795605854e-12
+          ],
+          "passed": true
+        },
+        "scope": "IID synthetic linear regression; no neural-network or robot training."
+      },
+      {
+        "seed": 19,
+        "steps": 500,
+        "learning_rate": 0.05,
+        "ground_truth": {
+          "w": 2,
+          "b": -1,
+          "noise_std": 0.1
+        },
+        "learned": {
+          "w": 2.0168781117980634,
+          "b": -0.9953298551765764
+        },
+        "split_sizes": {
+          "train": 60,
+          "validation": 20,
+          "test": 20
+        },
+        "initial_train_mse": 5.726766479810237,
+        "final_mse": {
+          "train": 0.006432949556940524,
+          "validation": 0.007640215242702505,
+          "test": 0.003990797753055592
+        },
+        "gradient_check": {
+          "analytical": [
+            -3.897948473357261,
+            1.7710867268722659
+          ],
+          "finite_difference": [
+            -3.897948473374768,
+            1.771086726876092
+          ],
+          "relative_errors": [
+            2.24565370095713e-12,
+            1.0801420758812518e-12
+          ],
+          "passed": true
+        },
+        "scope": "IID synthetic linear regression; no neural-network or robot training."
+      },
+      {
+        "seed": 42,
+        "steps": 500,
+        "learning_rate": 0.05,
+        "ground_truth": {
+          "w": 2,
+          "b": -1,
+          "noise_std": 0.1
+        },
+        "learned": {
+          "w": 1.99476811611717,
+          "b": -1.0081647575349417
+        },
+        "split_sizes": {
+          "train": 60,
+          "validation": 20,
+          "test": 20
+        },
+        "initial_train_mse": 6.6045868458919585,
+        "final_mse": {
+          "train": 0.010629228643417454,
+          "validation": 0.010543613091828264,
+          "test": 0.02062204700001879
+        },
+        "gradient_check": {
+          "analytical": [
+            -4.663092789698596,
+            1.7812678209268555
+          ],
+          "finite_difference": [
+            -4.663092789725098,
+            1.7812678208883879
+          ],
+          "relative_errors": [
+            2.841714400783963e-12,
+            1.0797835406757222e-11
+          ],
+          "passed": true
+        },
+        "scope": "IID synthetic linear regression; no neural-network or robot training."
+      }
+    ],
+    "attention": {
+      "two_keys": {
+        "logits_before_mask": [
+          0.7071067811865475,
+          0.0
+        ],
+        "weights": [
+          0.6697615493266569,
+          0.3302384506733431
+        ],
+        "output": [
+          1.3395230986533138,
+          0.6604769013466862
+        ]
+      },
+      "second_key_masked": {
+        "logits_before_mask": [
+          0.7071067811865475,
+          0.0
+        ],
+        "weights": [
+          1.0,
+          0.0
+        ],
+        "output": [
+          2.0,
+          0.0
+        ]
+      },
+      "causal_three_tokens": [
+        {
+          "logits_before_mask": [
+            0.7071067811865475,
+            0.0,
+            0.7071067811865475
+          ],
+          "weights": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "output": [
+            2.0,
+            0.0
+          ]
+        },
+        {
+          "logits_before_mask": [
+            0.0,
+            0.7071067811865475,
+            0.7071067811865475
+          ],
+          "weights": [
+            0.3302384506733431,
+            0.6697615493266569,
+            0.0
+          ],
+          "output": [
+            0.6604769013466862,
+            1.3395230986533138
+          ]
+        },
+        {
+          "logits_before_mask": [
+            0.7071067811865475,
+            0.7071067811865475,
+            1.414213562373095
+          ],
+          "weights": [
+            0.2482550782577231,
+            0.2482550782577231,
+            0.5034898434845538
+          ],
+          "output": [
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "scope": "Single-head arithmetic demonstration; no trained transformer."
+    }
+  },
+  "scope": "CPU toy experiments only; no external-model, GPU or robot validation."
+}

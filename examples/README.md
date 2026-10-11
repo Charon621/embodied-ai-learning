@@ -8,4 +8,4 @@ python scripts/validate_repo.py --run-labs --seeds 7,19,42 --report outputs/vali
 
 每个 seed 都从头运行三个脚本，结果写入 `outputs/validation/seed-<seed>/`。JSON 中的 script SHA-256 对应实测时脚本的原始文件字节；换行转换或修改代码会改变摘要。新的报告有新的时间，不能拿时间字段要求整份报告逐字节相同。单个实验的固定 seed 产物可单独比较。
 
-这些数值是教学 toy 的证据，没有完整神经模型、GPU或机器人实验。指标解释、预算限制与未验证内容见[验证报告](../docs/VALIDATION.md)。
+这些数值是教学 toy 的证据，没有完整神经模型、GPU或机器人实验。指标解释、预算限制与未验证内容见[验证报告](../学习指南/验证记录.md)。

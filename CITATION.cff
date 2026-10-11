@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "引用模型方法和实验成绩请回到原论文；引用本课程可使用以下信息。"
 title: "具身智能、世界模型与视频生成：从入门到研究实践"
 type: software
-version: 1.0.0
-date-released: 2026-10-11
+version: 1.1.0
+date-released: 2026-10-12
 authors:
   - name: Charon621
 repository-code: "https://github.com/Charon621/embodied-ai-learning"

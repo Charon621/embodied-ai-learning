@@ -1,6 +1,6 @@
 # 实验 02：学到一维速度场，再把噪声运输成目标分布
 
-对应 [M04](../docs/modules/04-diffusion-and-flow.md)。只用 Python 标准库和 CPU，不联网、不下载数据/权重、不安装库、不调用 API。需要 Python 3.8 或更高版本。仓库根目录运行：
+对应 [第4章](../课程/04-扩散与FlowMatching.md)。只用 Python 标准库和 CPU，不联网、不下载数据/权重、不安装库、不调用 API。需要 Python 3.8 或更高版本。仓库根目录运行：
 
 ```bash
 python labs/02_flow_matching.py --output-dir outputs/02-flow --seed 2026
@@ -35,7 +35,7 @@ python labs/02_flow_matching.py --output-dir outputs/02-flow --seed 2026
 
 ## 练习与验收
 
-1. 不看代码，推导 `mt=2t`、`qt=(1-t)²+0.25t²` 与 M04 的条件速度公式。
+1. 不看代码，推导 `mt=2t`、`qt=(1-t)²+0.25t²` 与 第4章 的条件速度公式。
 2. 重算 `samples.csv` 的终点矩，并说明它与理论目标不同的两个原因。
 3. 固定训练场，比较 `--steps 8,32,128,512`；当积分误差越来越小时，学习误差是否也同步下降？给出数据。
 4. 另用 `--seed 0` 和 `--seed 7`，报告全部结果，解释种子变化来自训练抽样和评估抽样两部分。

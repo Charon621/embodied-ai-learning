@@ -69,10 +69,19 @@ def check_structure():
     require(len(ids) == len(set(ids)), "Duplicate module ID")
     completed = set()
     weeks = []
-    for m in modules:
+    home = (ROOT / "README.md").read_text(encoding="utf-8")
+    for reader_number, m in enumerate(modules, 1):
         require(set(m["prerequisites"]) <= completed,
                 f"Missing prerequisite or non-topological order: {m['id']}")
         require((ROOT / m["path"]).is_file(), f"Missing module: {m['path']}")
+        require(m["reader_number"] == reader_number, f"Reader chapter order: {m['id']}")
+        chapter = (ROOT / m["path"]).read_text(encoding="utf-8")
+        require(chapter.startswith(f"# 第{reader_number}章："), f"Readable chapter title: {m['path']}")
+        require("](" + m["path"] + ")" in home, f"Chapter missing from homepage: {m['path']}")
+        require("## 这一章怎么学" in chapter, f"Missing chapter learning steps: {m['path']}")
+        if reader_number < len(modules):
+            next_file = Path(modules[reader_number]["path"]).name
+            require("[下一章](" + next_file + ")" in chapter, f"Missing next chapter: {m['path']}")
         begin, end = m["weeks"]
         require(begin <= end and m["estimated_hours"] > 0, f"Invalid duration: {m['id']}")
         require((end - begin + 1) * course["weekly_hours"] == m["estimated_hours"],
@@ -113,7 +122,48 @@ def check_structure():
     return {"modules": len(modules), "sources": len(sources),
             "required_sources": sum(s["required"] for s in sources),
             "hours": course["total_estimated_hours"], "weeks": course["planned_weeks"],
-            "local_file_links": links, "python_files_compiled": len(scripts)}
+            "local_file_links": links, "python_files_compiled": len(scripts),
+            "homepage_chapter_links": len(modules), "chapter_navigation": "checked"}
+
+
+def run_basics(seeds):
+    reports = []
+    for seed in seeds:
+        destination = ROOT / "outputs/validation" / f"seed-{seed}" / "linear"
+        script = ROOT / "练习/01-线性回归/train.py"
+        result = subprocess.run([sys.executable, str(script), "--seed", str(seed), "--output-dir", str(destination)],
+                                cwd=ROOT, capture_output=True, text=True, encoding="utf-8", timeout=30,
+                                env={**os.environ, "PYTHONUTF8": "1"})
+        require(result.returncode == 0, f"Intro linear exercise failed: {result.stderr[-1000:]}")
+        metrics = audit_outputs(destination, ["metrics.json", "history.csv", "data.csv"])
+        grouped = defaultdict(list)
+        rows = csv_rows(destination / "data.csv")
+        require(len(rows) == 100 and len({r["sample_id"] for r in rows}) == 100, "Linear data coverage")
+        for row in rows:
+            grouped[row["split"]].append((float(row["prediction"]) - float(row["y"])) ** 2)
+        for name, squared in grouped.items():
+            close(statistics.mean(squared), metrics["final_mse"][name], "Linear independent MSE")
+            require(len(squared) == metrics["split_sizes"][name], "Linear split count")
+        require(abs(metrics["learned"]["w"] - 2) < 0.1 and abs(metrics["learned"]["b"] + 1) < 0.1,
+                "Default linear fit differs from known synthetic coefficients")
+        require(metrics["gradient_check"]["passed"] is True, "Finite-difference gradient check failed")
+        reports.append(metrics)
+        print(f"PASS linear seed={seed}: gradient, ground truth and independent CSV MSE", flush=True)
+    destination = ROOT / "outputs/validation/attention"
+    result = subprocess.run([sys.executable, str(ROOT / "练习/02-注意力/attention.py"), "--output-dir", str(destination)],
+                            cwd=ROOT, capture_output=True, text=True, encoding="utf-8", timeout=30,
+                            env={**os.environ, "PYTHONUTF8": "1"})
+    require(result.returncode == 0, f"Attention exercise failed: {result.stderr[-1000:]}")
+    attention = read_json(destination / "result.json")
+    reference = math.exp(1 / math.sqrt(2)) / (math.exp(1 / math.sqrt(2)) + 1)
+    close(attention["two_keys"]["weights"][0], reference, "Attention weight reference")
+    close(attention["two_keys"]["output"][0], 2 * reference, "Attention value reference")
+    require(attention["second_key_masked"]["output"] == [2.0, 0.0], "Attention mask result")
+    for index, row in enumerate(attention["causal_three_tokens"]):
+        close(sum(row["weights"]), 1, "Attention normalized weights")
+        require(all(v == 0 for v in row["weights"][index + 1:]), "Causal attention leaks future tokens")
+    print("PASS attention: hand-calculation reference and causal visibility", flush=True)
+    return {"linear": reports, "attention": attention}
 
 
 def audit_outputs(directory, expected):
@@ -245,16 +295,18 @@ def main():
         structure = check_structure()
         print("PASS structure:", json.dumps(structure), flush=True)
         results = []
+        basics = {}
         if args.run_labs:
             seeds = list(dict.fromkeys(int(v) for v in args.seeds.split(",")))
             require(bool(seeds), "At least one seed required")
+            basics = run_basics(seeds)
             results = run_labs(seeds)
         if args.report:
             hashes = {str(p.relative_to(ROOT)).replace("\\", "/"): hashlib.sha256(p.read_bytes()).hexdigest()
                       for p in public_files(".py")}
             report = {"checked_at_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
                       "python": platform.python_version(), "platform": platform.system(),
-                      "structure": structure, "script_sha256": hashes, "runs": results,
+                      "structure": structure, "script_sha256": hashes, "runs": results, "intro_exercises": basics,
                       "scope": "CPU toy experiments only; no external-model, GPU or robot validation."}
             args.report.parent.mkdir(parents=True, exist_ok=True)
             args.report.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n",

@@ -1,0 +1,13 @@
+episode_id,scene_id,object_id
+e01,scene1,cupA
+e02,scene1,cupA
+e03,scene1,cupB
+e04,scene1,cupB
+e05,scene2,cupA
+e06,scene2,cupA
+e07,scene2,cupB
+e08,scene2,cupB
+e09,scene3,cupA
+e10,scene3,cupA
+e11,scene3,cupB
+e12,scene3,cupB

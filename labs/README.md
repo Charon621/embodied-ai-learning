@@ -10,9 +10,9 @@ python labs/03_world_model_planning.py --seed 7 --output-dir outputs/world
 
 | 实验 | 要回答的问题 | 主要产物 | 对应课程 |
 |---|---|---|---|
-| 01 行为克隆与反馈数据 | 分布内动作误差小，为什么闭环仍会失败？ | `metrics.json`、`rollouts.csv`、`rollout.svg` | [M05](../docs/modules/05-imitation-and-vla.md) |
-| 02 一维 Flow Matching | 学习速度场误差与数值积分误差有什么不同？ | 指标、场系数、采样 CSV、SVG | [M04](../docs/modules/04-diffusion-and-flow.md)、[详细说明](README-flow.md) |
-| 03 世界模型与规划 | 一步预测、长程预测与实际控制是否一致？ | 原始转移、预测与控制 CSV、指标、SVG | [M06](../docs/modules/06-latent-world-models.md)、[详细说明](README-world-model.md) |
+| 01 行为克隆与反馈数据 | 分布内动作误差小，为什么闭环仍会失败？ | `metrics.json`、`rollouts.csv`、`rollout.svg` | [第5章](../课程/05-模仿学习与VLA.md) |
+| 02 一维 Flow Matching | 学习速度场误差与数值积分误差有什么不同？ | 指标、场系数、采样 CSV、SVG | [第4章](../课程/04-扩散与FlowMatching.md)、[详细说明](README-flow.md) |
+| 03 世界模型与规划 | 一步预测、长程预测与实际控制是否一致？ | 原始转移、预测与控制 CSV、指标、SVG | [第6章](../课程/06-世界模型与规划.md)、[详细说明](README-world-model.md) |
 
 SVG 可直接用浏览器打开。结论应来自全部试验的 CSV 和统计，示例轨迹图用于解释现象。
 
@@ -54,4 +54,4 @@ python scripts/validate_repo.py
 python scripts/validate_repo.py --run-labs --seeds 7,19,42
 ```
 
-检查失败返回非零退出码，生成物保留以便诊断。检查范围和发布时的实际结果见[验证报告](../docs/VALIDATION.md)。这些教学实验没有神经视觉编码器、视频生成或真实机器人；完整模型实践另按[环境路线](../docs/ENVIRONMENT.md)和[研究进阶](../docs/ADVANCED_RESEARCH.md)选择。
+检查失败返回非零退出码，生成物保留以便诊断。检查范围和发布时的实际结果见[验证报告](../学习指南/验证记录.md)。这些教学实验没有神经视觉编码器、视频生成或真实机器人；完整模型实践另按[环境路线](../学习指南/准备电脑.md)和[研究进阶](../学习指南/深入研究.md)选择。
